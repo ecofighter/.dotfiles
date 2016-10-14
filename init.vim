@@ -48,6 +48,7 @@ colorscheme hybrid
 " colorscheme molokai
 set background=dark 
 filetype plugin on
+filetype indent on
 syntax on
 nnoremap j gj
 nnoremap k gk

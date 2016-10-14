@@ -5,7 +5,7 @@ setopt auto_pushd
 setopt correct
 setopt list_packed
 setopt nolistbeep
-PROMPT="%m:%n %% "
+PROMPT="%n@%m %% "
 RPROMPT="[%d]"
 
 export XDG_CONFIG_HOME=~/.config
