@@ -1,11 +1,12 @@
 import System.IO
 
 import XMonad
+import XMonad.Actions.WindowGo
 import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
-
+import XMonad.Util.EZConfig
 colorBlue      = "#857da9"
 colorGreen     = "#88b986"
 colorGray      = "#676767"
@@ -28,12 +29,21 @@ main = do
                              , ppVisible = wrap "(" ")"
                              }
                           }
+            `additionalKeys`
+            [
+              ((0 , 0x1008FF02), spawn "xbacklight + 10")
+            , ((0 , 0x1008FF03), spawn "xbacklight - 10")
+            ]
+            `additionalKeysP`
+            [
+              ("M-c", spawn "chromium")
+            ]
 
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = ( modMask, xK_b )
-myTerminal = "urxvtc -e fish"
+myTerminal = "urxvtc"
 myModMask = mod4Mask
 myStartupHook = do
-  spawn "compton"
   spawn "fcitx"
 myStatusBar = "xmobar"
-mySBPP =  xmobarPP
+mySBPP =  xmobarPP  { ppCurrent xmobarColor #8c9440 #1d1f21
+                    }
