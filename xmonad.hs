@@ -33,6 +33,9 @@ main = do
             [
               ((0 , 0x1008FF02), spawn "xbacklight + 10")
             , ((0 , 0x1008FF03), spawn "xbacklight - 10")
+            , ((0 , 0x1008FF11),  spawn "amixer set Master 4%-")
+            , ((0 , 0x1008FF13),  spawn "amixer set Master 4%+")
+            , ((0 , 0x1008FF12),  spawn "amixer set Master toggle")
             ]
             `additionalKeysP`
             [
@@ -40,10 +43,11 @@ main = do
             ]
 
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = ( modMask, xK_b )
-myTerminal = "urxvtc"
+myTerminal = "urxvtc -e fish"
 myModMask = mod4Mask
 myStartupHook = do
   spawn "fcitx"
 myStatusBar = "xmobar"
-mySBPP =  xmobarPP  { ppCurrent xmobarColor #8c9440 #1d1f21
+mySBPP =  xmobarPP  { ppCurrent = xmobarColor "#f0c674" "#1d1f21"
+                    , ppTitle   = xmobarColor "#8abeb7" "#1d1f21"
                     }

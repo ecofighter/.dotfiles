@@ -54,6 +54,8 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
+let g:tex_conceal=''
+let g:deoplete#enable_at_startup = 1
 let mapleader = "\<Space>"
 nnoremap [unite] <Nop>
 nmap <Leader>u [unite]
