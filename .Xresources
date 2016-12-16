@@ -9,6 +9,8 @@ Xft.rgba:	rgb
 URxvt*font:	xft:Ricty:size=12:antialias=true
 URxvt*depth:  32
 URxvt*scrollBar:  False
+URxvt*fading: 20
+URxvt*fadeColor:  rgba:0000/0000/0000/dddd
 ! Tomorrow-Night Palette
 #define t_background #1D1F21
 #define t_current_line #282A2E
@@ -23,7 +25,7 @@ URxvt*scrollBar:  False
 #define t_blue #81A2BE
 #define t_purple #B294BB
 
-URxvt.background: t_background
+URxvt.background: rgba:0029/0031/0033/cccc
 URxvt.foreground: t_foreground
 ! black
 *color0: t_current_line
@@ -50,4 +52,3 @@ URxvt.foreground: t_foreground
 *color7: t_comment
 *color15: t_foreground
 URxvt*url-launcher:  chromium
-URxvt.perl-ext-common: tabbed

@@ -15,9 +15,7 @@ if [[ $- != *i* ]] ; then
 fi
 
 # Put your fun stuff here.
-if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec startx
+
+if [[ $- = *i*  ]]; then
+   exec fish
 fi
-# if [[ $- = *i*  ]]; then
-#    exec fish
-# fi
