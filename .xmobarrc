@@ -38,10 +38,11 @@ Config { font = "xft:Koruri:size=10"
 						, "--normal"	, "#ffffff"
 						, "--high"	, "#f44336"
 						] 10
-			, Run Battery	[ 
+			, Run BatteryP [ "BAT1"	] [ 
               "-t"		, "<acstatus> "
 						, "-L"		, "20"
 						, "-H"		, "80"
+            , "-f"    , "ADP1/online"
 						, "--low"	, "#f44556"
 						, "--normal"	, "#ffffff"
 						, "--"
