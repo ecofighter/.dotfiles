@@ -1,16 +1,5 @@
-<<<<<<< HEAD
 remove Control = Caps_Lock
 remove Lock = Caps_Lock
 keycode 66 = Control_L Control_L
 keycode 37 = Control_L Control_L
 add Control = Control_L
-=======
-keycode 66 = Control_L Control_L
-keycode 37 = Eisu_toggle Caps_Lock
-remove Lock = Eisu_toggle
-remove Lock = Control_L
-remove Control = Control_L
-remove Control = Eisu_toggle
-add Control = Control_L
-add Lock = Eisu_toggle
->>>>>>> 7de2ec1af52ec4ab3ba62b06d1d110570c8e50b8
