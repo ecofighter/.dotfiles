@@ -49,7 +49,7 @@ Config { font = "xft:Koruri:size=10"
 							, "-o"	, "<left>% (<timeleft>)"
 							, "-O"	, "Charging <left>%"
 							, "-i"	, "<left>%"
-						] 50
+						] 10
 			, Run Date "%a %m/%d %H:%M" "date" 10
 			, Run StdinReader
 			]

@@ -48,8 +48,8 @@ myLogHook h = dynamicLogWithPP $ mySBPP { ppOutput = hPutStrLn h }
 mySBPP =  xmobarPP  { ppCurrent = xmobarColor "#f0c674" "#1d1f21"
                     , ppTitle   = xmobarColor "#8abeb7" "#1d1f21"
                     }
-myLayout = spacing 9
-            $ gaps [(U, 9), (D, 9), (L, 9), (R, 9)]
+myLayout = spacing 6
+            $ gaps [(U, 8), (D, 8), (L, 8), (R, 8)]
             $ ( ResizableTall 1 (1/204) (119/204) [] )
           ||| ( TwoPane (1/204) (119/204) )
           ||| Simplest
