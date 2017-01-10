@@ -2,7 +2,13 @@ if &compatible
   set nocompatible
 endif
 
-let s:dein_dir = expand('~/.cache/dein')
+if exists('g:nyaovim_version')
+  let s:dein_dir = expand('~/.cache/nyaovim/dein')
+elseif has('nvim')
+  let s:dein_dir = expand('~/.cache/neovim/dein')
+else
+  let s:dein_dir = expand('~/.cache/vim/dein')
+endif
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 if !isdirectory(s:dein_repo_dir)
@@ -57,7 +63,5 @@ nnoremap gk k
 let mapleader = "\<Space>"
 nnoremap [unite] <Nop>
 nmap <Leader>u [unite]
-nnoremap <silent>[unite]c :<C-u>UniteWithCurrentDir -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <silent>[unite]b :<C-u>Unite buffer<CR>
-
-nnoremap <silent><Leader>n :NERDTreeToggle<CR>
+nnoremap <silent>[unite]c :<C-u>Denite files buffer file_mru bookmark file<CR>
+nnoremap <silent>[unite]b :<C-u>Denite buffer<CR>

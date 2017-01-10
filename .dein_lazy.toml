@@ -22,10 +22,6 @@ on_i = 1
 on_ft = ['snippet']
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-depends = 'neomru.vim'
-
-[[plugins]]
 repo = 'thinca/vim-quickrun'
 on_path = '.*'
 hook_add = '''

@@ -6,6 +6,14 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
+if = 'has("nvim")'
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+if = 'has("lua")'
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
@@ -24,9 +32,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
-
-[[plugins]]
-repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'Shougo/neocomplete'
