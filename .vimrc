@@ -55,6 +55,9 @@ set smartindent
 colorscheme hybrid
 " colorscheme molokai
 set background=dark 
+if executable('rg')
+  set grepprg=rg\ --follow
+endif
 filetype plugin on
 filetype indent on
 syntax on
