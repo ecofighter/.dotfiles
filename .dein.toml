@@ -6,14 +6,6 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
-if = 'has("nvim")'
-repo = 'Shougo/denite.nvim'
-
-[[plugins]]
-if = 'has("lua")'
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
@@ -33,6 +25,11 @@ hook_add = '''
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
 
+
+[[plugins]]
+repo = 'kassio/neoterm'
+if = 'has("nvim")'
+
 [[plugins]]
 repo = 'Shougo/neocomplete'
 if = 'has("lua")'
@@ -42,6 +39,7 @@ hook_add = '''
     \ neosnippet#expandable_or_jumpable() ?
     \   "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 '''
+
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 if = 'has("nvim")'
