@@ -2,6 +2,8 @@ if &compatible
   set nocompatible
 endif
 
+let mapleader = "\<Space>"
+
 if exists('g:nyaovim_version')
   let s:dein_dir = expand('~/.cache/nyaovim/dein')
 elseif has('nvim')
@@ -60,8 +62,6 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
-let mapleader = "\<Space>"
-nnoremap [unite] <Nop>
-nmap <Leader>u [unite]
-nnoremap <silent>[unite]c :<C-u>Denite files buffer file_mru bookmark file<CR>
-nnoremap <silent>[unite]b :<C-u>Denite buffer<CR>
+if has('nvim')
+  tnoremap <silent> <ESC> <C-\><C-n>
+endif
