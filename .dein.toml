@@ -4,6 +4,7 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
+if = '!has("nvim")'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -13,6 +14,9 @@ repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
 repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -25,6 +29,8 @@ hook_add = '''
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
 
+[[plugins]]
+repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'kassio/neoterm'

@@ -1,3 +1,5 @@
+set encoding=utf-8
+scriptencoding utf-8
 if &compatible
   set nocompatible
 endif
@@ -32,9 +34,6 @@ if dein#load_state( s:dein_dir )
 endif
 
 
-if dein#check_install( ['vimproc'] )
-  call dein#install( ['vimproc'] )
-endif
 if dein#check_install()
   call dein#install()
 endif
@@ -44,8 +43,6 @@ set t_Co=256
 set number
 set cursorline
 hi clear CursorLine
-set clipboard&
-set clipboard^=unnamedplus
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -54,13 +51,21 @@ set expandtab
 set smartindent
 colorscheme hybrid
 " colorscheme molokai
+" colorscheme iceberg
 set background=dark 
 if executable('rg')
-  set grepprg=rg\ --follow
+  set grepprg=rg\ --follow\ --vimgrep
 endif
 filetype plugin on
 filetype indent on
 syntax on
+
+augroup indent_styles
+  autocmd!
+  autocmd Filetype c,cpp setlocal cinoptions=>4,n-2,f2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1 
+  autocmd Filetype c,cpp setlocal fo-=ro fo+=cql cindent 
+augroup END
+
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
