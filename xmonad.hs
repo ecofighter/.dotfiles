@@ -39,6 +39,8 @@ main = do
             `additionalKeysP`
             [
               ("M-c", spawn "google-chrome-stable")
+            , ("M-8", spawn "xbacklight - 10")
+            , ("M-9", spawn "xbacklight + 10")
             ]
 
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = ( modMask, xK_b )
