@@ -62,8 +62,10 @@ syntax on
 
 augroup indent_styles
   autocmd!
-  autocmd Filetype c,cpp setlocal cinoptions=>4,n-2,f2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1 
-  autocmd Filetype c,cpp setlocal fo-=ro fo+=cql cindent 
+  autocmd Filetype c setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1 
+  autocmd Filetype c setlocal fo-=ro fo+=cql cindent 
+  autocmd Filetype cpp setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1 
+  autocmd Filetype cpp setlocal fo-=ro fo+=cql cindent 
 augroup END
 
 nnoremap j gj

@@ -86,6 +86,14 @@ let g:quickrun_config = {
   \ }
 '''
 
+[[plugins]]
+repo = 'neovimhaskell/haskell-vim'
+on_ft = 'haskell'
+
+[[plugins]]
+repo = 'eagletmt/neco-ghc'
+on_ft = 'haskell'
+
 [[plugins]] 
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
@@ -93,10 +101,6 @@ on_ft = 'toml'
 [[plugins]]
 repo = 'rust-lang/rust.vim'
 on_ft = 'rust'
-hook_add = '''
-  let g:rustfmt_autosave = 1
-  let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
-'''
 
 [[plugins]]
 repo = 'racer-rust/vim-racer'
@@ -106,10 +110,6 @@ hook_add = '''
   let g:racer_cmd = '$HOME/.cargo/bin/racer'
   let $RUST_SRC_PATH = "/usr/src/rust/src"
 '''
-
-[[plugins]]
-repo = 'dag/vim2hs'
-on_ft = 'haskell'
 
 [[plugins]]
 repo = 'lervag/vimtex'
