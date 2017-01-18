@@ -49,6 +49,7 @@ set shiftwidth=2
 set smarttab
 set expandtab
 set smartindent
+set backspace=indent,eol,start
 colorscheme hybrid
 " colorscheme molokai
 " colorscheme iceberg
