@@ -1,5 +1,3 @@
-set lines=25
-set columns=50
 set guioptions=c
 
 set mouse=
