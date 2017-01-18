@@ -5,16 +5,6 @@ repo = 'Shougo/neomru.vim'
 repo = 'Shougo/neoyank.vim'
 
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
-
-[[plugins]]
-repo = 'Yggdroot/indentLine'
-
-[[plugins]]
-repo = 'kassio/neoterm'
-if = 'has("nvim")'
-
-[[plugins]]
 if = 'has("python3")'
 repo = 'Shougo/denite.nvim'
 depends = ['neomru.vim', 'neoyank.vim']
@@ -119,7 +109,6 @@ on_ft = 'rust'
 hook_add = '''
   set hidden
   let g:racer_cmd = 'racer'
-  let $RUST_SRC_PATH = "/usr/src/rust/src"
 '''
 
 [[plugins]]

@@ -3,8 +3,25 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
-build = 'make'
 if = '!has("nvim")'
+build = 'make'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'kassio/neoterm'
+if = 'has("nvim")'
+
+[[plugins]]
+repo = 'neomake/neomake'
+if = 'has("nvim")'
+hook_add = '''
+  autocmd! BufWritePost * Neomake
+'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'

@@ -9,13 +9,15 @@
 # Test for an interactive shell.  There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
+
+export RUST_SRC_PATH=/home/haneta/.config/racer/rustc-1.13.0/src
 if [[ $- != *i* ]] ; then
 	# Shell is non-interactive.  Be done now!
-	return
+  return
 fi
 
 # Put your fun stuff here.
 
 if [[ $- = *i*  ]]; then
-   exec fish
+  exec fish
 fi
