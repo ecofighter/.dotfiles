@@ -1,0 +1,1 @@
+/home/haneta/.config/fisherman/ghq/completions/ghq.fish

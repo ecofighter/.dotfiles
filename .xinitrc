@@ -2,4 +2,5 @@
 [ -f /etc/xprofile  ] && source /etc/profile
 [ -f ~/.xprofile ] && source ~/.xprofile
 feh --bg-scale ~/picture/wallpaper/10YearsCompilingPurple.jpg &
+albert &
 exec xmonad

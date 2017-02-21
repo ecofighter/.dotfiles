@@ -1,0 +1,1 @@
+/home/haneta/.config/fisherman/await/functions/await.fish

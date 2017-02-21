@@ -7,6 +7,20 @@ build = 'make'
 if = '!has("nvim")'
 
 [[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'kassio/neoterm'
+if = 'has("nvim")'
+
+[[plugins]]
+repo = 'neomake/neomake'
+if = 'has("nvim")'
+
+[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
@@ -28,7 +42,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/neocomplete'
-if = 'has("lua")'
+if = '!has("nvim")'
 hook_add = '''
   let g:neocomplete#enable_at_startup = 1
   inoremap <expr><tab> pumvisible() ? "\<C-n>" :

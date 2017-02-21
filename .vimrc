@@ -49,6 +49,9 @@ set shiftwidth=2
 set smarttab
 set expandtab
 set smartindent
+set conceallevel=0
+let g:tex_conceal=''
+set mouse=nvc
 set backspace=indent,eol,start
 colorscheme hybrid
 " colorscheme molokai
@@ -76,4 +79,5 @@ nnoremap gk k
 if has('nvim')
   set sh=fish
   tnoremap <silent> <ESC> <C-\><C-n>
+  nnoremap <silent> <Leader>tt :<C-u>Ttoggle<CR>
 endif

@@ -1,0 +1,1 @@
+/home/haneta/.config/fisherman/z/conf.d/z.fish
