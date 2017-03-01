@@ -54,7 +54,4 @@ myWorkspaces = [ "1", "2", "3", "4", "5" ]
 mySBPP =  xmobarPP  { ppCurrent = xmobarColor "#f0c674" "#1d1f21"
                     , ppTitle   = xmobarColor "#8abeb7" "#1d1f21"
                     }
-myLayout = spacing 3 $ gaps [(U, 4), (D, 4), (L, 4), (R, 4)] $
-  ( ResizableTall 1 (1/204) (119/204) [] )
-  ||| ( TwoPane (1/204) (119/204) )
-  ||| Simplest
+myLayout = spacing 3 $ gaps [(U, 4), (D, 4), (L, 4), (R, 4)] $ ( ResizableTall 1 (1/204) (119/204) [] ) ||| ( TwoPane (1/204) (119/204) ) ||| Simplest
