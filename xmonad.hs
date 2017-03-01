@@ -25,26 +25,26 @@ baseConfig = desktopConfig
 
 main :: IO()
 main = do
-    statusBar <- spawnPipe myStatusBar 
-    xmonad $ baseConfig   { terminal = "urxvtc"
-                          , modMask = myModMask
-                          , normalBorderColor = colorGray
-                          , focusedBorderColor = colorGreen
-                          , logHook = myLogHook statusBar
-                          , workspaces = myWorkspaces
-                          , layoutHook = onWorkspace "5" (avoidStruts simplestFloat) $ avoidStruts $ myLayout
-                          }
-            `additionalKeys`
-            [
-              ((0 , 0x1008FF02), spawn "xbacklight + 10")
-            , ((0 , 0x1008FF03), spawn "xbacklight - 10")
-            ]
-            `additionalKeysP`
-            [
-              ("M-c", spawn "google-chrome-stable")
-            , ("M-8", spawn "xbacklight - 10")
-            , ("M-9", spawn "xbacklight + 10")
-            ]
+  statusBar <- spawnPipe myStatusBar 
+  xmonad $ baseConfig   { terminal = "urxvtc"
+                        , modMask = myModMask
+                        , normalBorderColor = colorGray
+                        , focusedBorderColor = colorGreen
+                        , logHook = myLogHook statusBar
+                        , workspaces = myWorkspaces
+                        , layoutHook = onWorkspace "5" (avoidStruts simplestFloat) $ avoidStruts $ myLayout
+                        }
+                        `additionalKeys`
+                        [
+                        ((0 , 0x1008FF02), spawn "xbacklight + 10")
+                        , ((0 , 0x1008FF03), spawn "xbacklight - 10")
+                        ]
+                        `additionalKeysP`
+                        [
+                        ("M-c", spawn "google-chrome-stable")
+                        , ("M-8", spawn "xbacklight - 10")
+                        , ("M-9", spawn "xbacklight + 10")
+                        ]
 
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = ( modMask, xK_b )
 myModMask = mod4Mask
@@ -54,8 +54,7 @@ myWorkspaces = [ "1", "2", "3", "4", "5" ]
 mySBPP =  xmobarPP  { ppCurrent = xmobarColor "#f0c674" "#1d1f21"
                     , ppTitle   = xmobarColor "#8abeb7" "#1d1f21"
                     }
-myLayout = spacing 6
-            $ gaps [(U, 8), (D, 8), (L, 8), (R, 8)]
-            $ ( ResizableTall 1 (1/204) (119/204) [] )
-          ||| ( TwoPane (1/204) (119/204) )
-          ||| Simplest
+myLayout = spacing 3 $ gaps [(U, 4), (D, 4), (L, 4), (R, 4)] $
+  ( ResizableTall 1 (1/204) (119/204) [] )
+  ||| ( TwoPane (1/204) (119/204) )
+  ||| Simplest

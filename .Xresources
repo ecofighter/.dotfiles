@@ -6,7 +6,7 @@ Xft.hinting:	1
 Xft.antialias:	1
 Xft.rgba:	rgb
 
-URxvt*font:	xft:Ricty:size=12:antialias=true
+URxvt*font:	xft:Ricty Diminished for Powerline:size=12:antialias=true
 URxvt*depth:  32
 URxvt*scrollBar:  False
 URxvt*fading: 20
