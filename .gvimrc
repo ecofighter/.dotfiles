@@ -1,4 +1,6 @@
 set guioptions=c
+set guifont=Ricty\ Diminished\ for\ Powerline\ 12
+set guifontwide=Ricty\ Diminished\ for\ Powerline\ 12
 
 set mouse=
 set nomousefocus
