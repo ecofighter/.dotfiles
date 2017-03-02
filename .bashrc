@@ -16,7 +16,7 @@ fi
 
 # Put your fun stuff here.
 export GOPATH="$HOME/.go"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
 
 if [[ $- = *i*  ]]; then
    exec fish
