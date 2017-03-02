@@ -46,5 +46,5 @@ SET fish_pager_color_description:555\x1eyellow
 SET fish_pager_color_prefix:cyan
 SET fish_pager_color_progress:cyan
 SET fish_user_paths:/home/haneta/\x2efzf/bin
-SET fisher_active_prompt:\x1d
-SET fisher_dependency_count:getopts\x1ez\x1elast_job_id\x1eawait\x1egetopts\x1eget\x1efzf\x1eghq
+SET fisher_active_prompt:bobthefish
+SET fisher_dependency_count:getopts\x1ez\x1elast_job_id\x1eawait\x1egetopts\x1eget\x1efzf\x1eghq\x1ebobthefish
