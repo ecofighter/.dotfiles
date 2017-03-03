@@ -78,7 +78,6 @@ nnoremap gj j
 nnoremap gk k
 if has('nvim')
   set sh=fish
-  set termguicolors
   tnoremap <silent> <ESC> <C-\><C-n>
   nnoremap <silent> <Leader>tt :<C-u>Ttoggle<CR>
 endif
