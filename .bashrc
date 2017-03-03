@@ -17,6 +17,7 @@ fi
 # Put your fun stuff here.
 export GOPATH="$HOME/.go"
 export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
+# export TERM=xterm-256color
 
 if [[ $- = *i*  ]]; then
    exec fish
