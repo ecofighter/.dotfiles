@@ -11,6 +11,8 @@ URxvt*depth:  32
 URxvt*scrollBar:  False
 URxvt*fading: 20
 URxvt*fadeColor:  rgba:0000/0000/0000/dddd
+! URxvt*shading: 20
+! URxvt*inheritPixmap: 20
 ! Tomorrow-Night Palette
 #define t_background #1D1F21
 #define t_current_line #282A2E
