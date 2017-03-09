@@ -21,6 +21,13 @@ repo = 'neomake/neomake'
 if = 'has("nvim")'
 
 [[plugins]]
+repo = 'tyru/caw.vim'
+hook_add = '''
+  nmap <Leader>c <Plug>(caw:hatpos:toggle)
+  vmap <Leader>c <Plug>(caw:hatpos:toggle)
+'''
+
+[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
@@ -59,4 +66,3 @@ hook_add = '''
     \ neosnippet#expandable_or_jumpable() ?
     \   "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 '''
-
