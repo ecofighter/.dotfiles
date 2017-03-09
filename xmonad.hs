@@ -15,10 +15,12 @@ import XMonad.Layout.ResizableTile
 import XMonad.Layout.Gaps
 import XMonad.Layout.Spacing
 import XMonad.Layout.TwoPane
-import XMonad.Layout.ToggleLayouts
+import XMonad.Layout.Named
 import XMonad.Layout.NoBorders
-import XMonad.Layout.Simplest
+import XMonad.Layout.ToggleLayouts
 import XMonad.Layout.SimplestFloat
+import qualified XMonad.Layout.MultiToggle as MT
+import XMonad.Layout.MultiToggle.Instances
 import qualified XMonad.Layout.Fullscreen as FS
 import Graphics.X11.ExtraTypes.XF86
 colorBlue      = "#857da9"
@@ -33,31 +35,30 @@ baseConfig = desktopConfig
 main :: IO()
 main = do
   statusBar <- spawnPipe myStatusBar 
-  xmonad $ FS.fullscreenSupport $ ewmh defaultConfig  { terminal = "urxvtc"
-                                                      , modMask = myModMask
-                                                      , normalBorderColor = colorGray
-                                                      , focusedBorderColor = colorGreen
-                                                      , logHook = myLogHook statusBar
-                                                      , workspaces = myWorkspaces
-                                                      , startupHook = setWMName "LG3D"
-                                                      , layoutHook = avoidStruts $ (toggleLayouts (noBorders Full)
-                                                            $ onWorkspace "5" simplestFloat
-                                                            $ myLayout)
-                                                      , manageHook = manageDocks <+> mymanageHook
-                                                      , handleEventHook = docksEventHook <+> fullscreenEventHook
-                                                      }
-                                                      `additionalKeys`
-                                                      [ ((0 , 0x1008FF02), spawn "xbacklight + 10")
-                                                      , ((0 , 0x1008FF03), spawn "xbacklight - 10")
-                                                      , ((0 , xF86XK_AudioMute),  spawn "sh -c 'pactl set-sink-mute combined toggle && /home/haneta/.local/bin/notify-mute.sh'")
-                                                      , ((0 , xF86XK_AudioRaiseVolume), spawn "sh -c 'pactl set-sink-mute combined false ; pactl set-sink-volume combined +5% && /home/haneta/.local/bin/notify-volume.sh'")
-                                                      , ((0 , xF86XK_AudioLowerVolume), spawn "sh -c 'pactl set-sink-mute combined false ; pactl set-sink-volume combined -5% && /home/haneta/.local/bin/notify-volume.sh'")
-                                                      ]
-                                                      `additionalKeysP`
-                                                      [ ("M-c", spawn "google-chrome-stable")
+  xmonad $ FS.fullscreenSupport $ ewmh defaultConfig  
+    { terminal = "urxvtc"
+    , modMask = myModMask
+    , normalBorderColor = colorGray
+    , focusedBorderColor = colorGreen
+    , logHook = myLogHook statusBar
+    , workspaces = myWorkspaces
+    , startupHook = setWMName "LG3D"
+    , layoutHook = avoidStruts layout
+    , manageHook = manageDocks <+> mymanageHook
+    , handleEventHook = docksEventHook <+> fullscreenEventHook 
+    }
+    `additionalKeys`
+    [ ((0 , xF86XK_AudioMute),  spawn "/home/haneta/.local/bin/mute-toggle.sh")
+    , ((0 , xF86XK_AudioRaiseVolume), spawn "/home/haneta/.local/bin/volume-change.sh '+'")
+    , ((0 , xF86XK_AudioLowerVolume), spawn "/home/haneta/.local/bin/volume-change.sh '-'")
+    ]
+    `additionalKeysP`
+    [ ("M-c", spawn "google-chrome-stable")
     , ("M-8", spawn "xbacklight - 10")
     , ("M-9", spawn "xbacklight + 10")
-                                                      ]
+    , ("M-f", sendMessage $ MT.Toggle NBFULL) 
+    , ("M-S-f", withFocused float)
+    ]
 
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = ( modMask, xK_b )
 
@@ -70,12 +71,15 @@ myLogHook h = dynamicLogWithPP $ mySBPP { ppOutput = hPutStrLn h }
 myWorkspaces = [ "1", "2", "3", "4", "5" ]
 
 mySBPP =  xmobarPP  { ppCurrent = xmobarColor "#f0c674" "#1d1f21"
-  , ppTitle   = xmobarColor "#8abeb7" "#1d1f21"
-                    }
+                    , ppTitle   = xmobarColor "#8abeb7" "#1d1f21" }
 
-myLayout = smartSpacing 3 $ gaps [(U, 4), (D, 4), (L, 4), (R, 4)] $ ( ResizableTall 1 (1/204) (119/204) [] ) ||| ( TwoPane (1/204) (119/204) ) ||| Simplest
+myLayout = MT.mkToggle1 NBFULL $ smartBorders $ (( named "RTall"  $ spacing ( ResizableTall 1 (1/204) (119/204) [] ))
+                                                ||| ( named "TwoPane" $ spacing (TwoPane (1/204) (119/204)) ))
+                                              where
+                                                spacing = smartSpacing 6 . gaps [(U, 4), (D, 4), (L, 4), (R, 4)] 
+
+layout = toggleLayouts (noBorders Full) $ onWorkspace "5" simplestFloat $ myLayout
 
 mymanageHook = composeAll [ isFullscreen  --> doFullFloat
-  , isDialog      --> doCenterFloat
-  , className =? "mpv" --> doCenterFloat
-                          ]
+                          , isDialog      --> doCenterFloat
+                          , className =? "mpv" --> doCenterFloat ]
