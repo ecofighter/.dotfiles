@@ -20,6 +20,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.Simplest
 import XMonad.Layout.SimplestFloat
 import qualified XMonad.Layout.Fullscreen as FS
+import Graphics.X11.ExtraTypes.XF86
 colorBlue      = "#857da9"
 colorGreen     = "#88b986"
 colorGray      = "#676767"
@@ -32,27 +33,31 @@ baseConfig = desktopConfig
 main :: IO()
 main = do
   statusBar <- spawnPipe myStatusBar 
-  xmonad $ ewmh defaultConfig   { terminal = "urxvtc"
-                                , modMask = myModMask
-                                , normalBorderColor = colorGray
-                                , focusedBorderColor = colorGreen
-                                , logHook = myLogHook statusBar
-                                , workspaces = myWorkspaces
-                                , layoutHook = avoidStruts $ (toggleLayouts (noBorders Full)
+  xmonad $ FS.fullscreenSupport $ ewmh defaultConfig  { terminal = "urxvtc"
+                                                      , modMask = myModMask
+                                                      , normalBorderColor = colorGray
+                                                      , focusedBorderColor = colorGreen
+                                                      , logHook = myLogHook statusBar
+                                                      , workspaces = myWorkspaces
+                                                      , startupHook = setWMName "LG3D"
+                                                      , layoutHook = avoidStruts $ (toggleLayouts (noBorders Full)
                                                             $ onWorkspace "5" simplestFloat
                                                             $ myLayout)
-                                , manageHook = manageDocks <+> mymanageHook
-                                , handleEventHook = docksEventHook <+> fullscreenEventHook
-                                }
-                                `additionalKeys`
-                                [ ((0 , 0x1008FF02), spawn "xbacklight + 10")
-                                , ((0 , 0x1008FF03), spawn "xbacklight - 10")
-                                ]
-                                `additionalKeysP`
-                                [ ("M-c", spawn "google-chrome-stable")
-                                , ("M-8", spawn "xbacklight - 10")
-                                , ("M-9", spawn "xbacklight + 10")
-                                ]
+                                                      , manageHook = manageDocks <+> mymanageHook
+                                                      , handleEventHook = docksEventHook <+> fullscreenEventHook
+                                                      }
+                                                      `additionalKeys`
+                                                      [ ((0 , 0x1008FF02), spawn "xbacklight + 10")
+                                                      , ((0 , 0x1008FF03), spawn "xbacklight - 10")
+                                                      , ((0 , xF86XK_AudioMute),  spawn "sh -c 'pactl set-sink-mute combined toggle && /home/haneta/.local/bin/notify-mute.sh'")
+                                                      , ((0 , xF86XK_AudioRaiseVolume), spawn "sh -c 'pactl set-sink-mute combined false ; pactl set-sink-volume combined +5% && /home/haneta/.local/bin/notify-volume.sh'")
+                                                      , ((0 , xF86XK_AudioLowerVolume), spawn "sh -c 'pactl set-sink-mute combined false ; pactl set-sink-volume combined -5% && /home/haneta/.local/bin/notify-volume.sh'")
+                                                      ]
+                                                      `additionalKeysP`
+                                                      [ ("M-c", spawn "google-chrome-stable")
+    , ("M-8", spawn "xbacklight - 10")
+    , ("M-9", spawn "xbacklight + 10")
+                                                      ]
 
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = ( modMask, xK_b )
 
