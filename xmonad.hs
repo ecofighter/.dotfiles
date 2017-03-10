@@ -55,6 +55,8 @@ main = do
     ]
     `additionalKeysP`
     [ ("M-c", runOrRaise "google-chrome-stable" (className =? "Google-chrome"))
+    , ("M-<Return>", spawn "urxvtc")
+    , ("M-S-<Return>", spawn "urxvtc -g 90x30 -name 'urxvt-float'")
     , ("M-8", spawn "xbacklight - 10")
     , ("M-9", spawn "xbacklight + 10")
     , ("M-f", sendMessage $ MT.Toggle NBFULL) 
@@ -86,4 +88,5 @@ layout = toggleLayouts (noBorders Full) $ onWorkspace "5" simplestFloat $ myLayo
 
 mymanageHook = composeAll [ isFullscreen  --> doFullFloat
                           , isDialog      --> doCenterFloat
+                          , title =? "urxvt-float" --> doSideFloat SC
                           , className =? "mpv" --> doCenterFloat ]
