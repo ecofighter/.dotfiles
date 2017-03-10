@@ -36,4 +36,7 @@ function fish_user_key_bindings
         bind -M insert \cg '__ghq_crtl_g'
     end
     ### ghq ###
+    ### tmux-fzf ##
+    bind -M insert \ct '__tmux_fzf'
+    ### tmux-fzf ##
 end
