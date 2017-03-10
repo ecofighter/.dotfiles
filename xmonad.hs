@@ -8,7 +8,7 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
-import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.Run(spawnPipe,runInTerm)
 import XMonad.Util.EZConfig
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.ResizableTile
@@ -38,13 +38,14 @@ main = do
   xmonad $ FS.fullscreenSupport $ ewmh defaultConfig  
     { terminal = "urxvtc"
     , modMask = myModMask
-    , normalBorderColor = colorGray
-    , focusedBorderColor = colorGreen
+    , borderWidth = 4
+    , normalBorderColor = "#262626"
+    , focusedBorderColor = "#aaaaaa"
     , logHook = myLogHook statusBar
     , workspaces = myWorkspaces
     , startupHook = setWMName "LG3D"
     , layoutHook = avoidStruts layout
-    , manageHook = manageDocks <+> mymanageHook
+    , manageHook = manageDocks <+> mymanageHook <+> raiseHook
     , handleEventHook = docksEventHook <+> fullscreenEventHook 
     }
     `additionalKeys`
@@ -53,11 +54,13 @@ main = do
     , ((0 , xF86XK_AudioLowerVolume), spawn "/home/haneta/.local/bin/volume-change.sh '-'")
     ]
     `additionalKeysP`
-    [ ("M-c", spawn "google-chrome-stable")
+    [ ("M-c", runOrRaise "google-chrome-stable" (className =? "Google-chrome"))
     , ("M-8", spawn "xbacklight - 10")
     , ("M-9", spawn "xbacklight + 10")
     , ("M-f", sendMessage $ MT.Toggle NBFULL) 
     , ("M-S-f", withFocused float)
+    , ("M-S-h", sendMessage MirrorShrink)
+    , ("M-S-l", sendMessage MirrorExpand)
     ]
 
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = ( modMask, xK_b )
@@ -73,10 +76,11 @@ myWorkspaces = [ "1", "2", "3", "4", "5" ]
 mySBPP =  xmobarPP  { ppCurrent = xmobarColor "#f0c674" "#1d1f21"
                     , ppTitle   = xmobarColor "#8abeb7" "#1d1f21" }
 
-myLayout = MT.mkToggle1 NBFULL $ smartBorders $ (( named "RTall"  $ spacing ( ResizableTall 1 (1/204) (119/204) [] ))
-                                                ||| ( named "TwoPane" $ spacing (TwoPane (1/204) (119/204)) ))
-                                              where
-                                                spacing = smartSpacing 6 . gaps [(U, 4), (D, 4), (L, 4), (R, 4)] 
+myLayout = MT.mkToggle1 NBFULL $ smartBorders
+                                $ (( named "RTall"  $ spacing ( ResizableTall 1 (3/100) (1/2) [] ))
+                                  ||| ( named "TwoPane" $ spacing (TwoPane (3/100) (1/2)) ))
+                                  where
+                                    spacing = smartSpacing 6 . gaps [(U, 4), (D, 4), (L, 4), (R, 4)] 
 
 layout = toggleLayouts (noBorders Full) $ onWorkspace "5" simplestFloat $ myLayout
 
