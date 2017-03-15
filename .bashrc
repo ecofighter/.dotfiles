@@ -14,6 +14,9 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx -- -keeptty
+fi
 # Put your fun stuff here.
 export GOPATH="$HOME/.go"
 export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
