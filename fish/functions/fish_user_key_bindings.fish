@@ -1,4 +1,7 @@
 function fish_user_key_bindings
+    ### tmux-fzf ##
+    bind -M insert \ct '__tmux_fzf'
+    ### tmux-fzf ##
     ### fzf ###
     set -q FZF_LEGACY_KEYBINDINGS
     or set -l FZF_LEGACY_KEYBINDINGS 1
@@ -36,7 +39,4 @@ function fish_user_key_bindings
         bind -M insert \cg '__ghq_crtl_g'
     end
     ### ghq ###
-    ### tmux-fzf ##
-    bind -M insert \ct '__tmux_fzf'
-    ### tmux-fzf ##
 end
