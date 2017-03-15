@@ -1,1 +1,0 @@
-/home/haneta/dotfiles/.vimrc
