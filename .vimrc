@@ -63,6 +63,12 @@ endif
 filetype plugin on
 filetype indent on
 syntax on
+if has('nvim')
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
+else
+  let &t_SI = "\033[6 q"
+  let &t_EI = "\033[2 q"
+endif
 
 augroup indent_styles
   autocmd!
