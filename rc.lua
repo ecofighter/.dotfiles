@@ -65,21 +65,21 @@ local altkey       = "Mod1"
 local terminal     = "urxvtc" or "xterm"
 local editor       = os.getenv("EDITOR") or "nano" or "vi"
 local gui_editor   = "gvim"
-local browser      = "firefox"
+local browser      = "google-chrome-unstable"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "1", "2", "3", "4" }
 awful.layout.layouts = {
-    awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
+    -- awful.layout.suit.floating,
+    -- awful.layout.suit.tile,
+    -- awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.bottom,
+    -- awful.layout.suit.tile.top,
+    -- awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.max,
+    -- awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier,
     --awful.layout.suit.corner.nw,
@@ -92,6 +92,11 @@ awful.layout.layouts = {
     --lain.layout.centerwork.horizontal,
     --lain.layout.termfair,
     --lain.layout.termfair.center,
+    awful.layout.suit.max,
+    awful.layout.suit.tile,
+    awful.layout.suit.tile.top,
+    -- awful.layout.suit.fair,
+    awful.layout.suit.floating,
 }
 awful.util.taglist_buttons = awful.util.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -210,7 +215,8 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     -- Take a screenshot
     -- https://github.com/copycat-killer/dots/blob/master/bin/screenshot
-    awful.key({ altkey }, "p", function() os.execute("screenshot") end),
+    -- awful.key({ altkey }, "p", function() os.execute("screenshot") end),
+    awful.key({  }, "Print", function() awful.util.spawn("scrot -e 'mv $f ~/Picture/screenshots/ 2>/dev/null'") end ),
 
     -- Hotkeys
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -302,7 +308,7 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey, "Control" }, "-", function () lain.util.useless_gaps_resize(-1) end),
 
     -- Dynamic tagging
-    awful.key({ modkey, "Shift" }, "n", function () lain.util.add_tag() end),
+    awful.key({ modkey, "Shift" }, "n", function () lain.util.add_tag(awful.layout.layouts[1]) end),
     awful.key({ modkey, "Shift" }, "r", function () lain.util.rename_tag() end),
     awful.key({ modkey, "Shift" }, "Left", function () lain.util.move_tag(1) end),   -- move to next tag
     awful.key({ modkey, "Shift" }, "Right", function () lain.util.move_tag(-1) end), -- move to previous tag
