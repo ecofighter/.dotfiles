@@ -3,3 +3,4 @@ remove Control = Control_L
 keysym Control_L = Control_L
 keysym Caps_Lock = Control_L
 add Control = Control_L
+add Control = Caps_Lock

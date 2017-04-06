@@ -8,9 +8,11 @@ Xft.rgba:	rgb
 
 URxvt*font:	xft:Ricty:size=12,xft:Inconsolata\ for\ Powerline:size=12
 URxvt*depth:  32
+URxvt*inputMethod: fcitx
 URxvt*preeditType: OnTheSpot
+URxvt*perl-ext: xim-onthespot
 URxvt*scrollBar:  False
-URxvt*fading: 20
+URxvt*fading: 30
 URxvt*fadeColor:  rgba:0000/0000/0000/dddd
 ! URxvt*shading: 20
 ! URxvt*inheritPixmap: 20
@@ -54,4 +56,4 @@ URxvt.foreground: t_foreground
 ! white
 *color7: t_comment
 *color15: t_foreground
-URxvt*url-launcher:  chromium
+URxvt*url-launcher:  google-chrome-stable

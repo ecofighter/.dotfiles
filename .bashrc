@@ -14,13 +14,13 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx -- -keeptty
-fi
 # Put your fun stuff here.
 export GOPATH="$HOME/.go"
 export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
 # export TERM=xterm-256color
+if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
 
 if [[ $- = *i*  ]]; then
    exec fish
