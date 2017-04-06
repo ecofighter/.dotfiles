@@ -17,8 +17,6 @@ repo = 'kassio/neoterm'
 if = 'has("nvim")'
 hook_add = '''
   set sh=bash
-  tnoremap <silent> <ESC> <C-\><C-n>
-  nnoremap <silent> <Leader>t :<C-u>Ttoggle<CR>
 '''
 
 [[plugins]]
@@ -32,8 +30,6 @@ hook_add = '''
 [[plugins]]
 repo = 'tyru/caw.vim'
 hook_add = '''
-  nmap <Leader>c <Plug>(caw:hatpos:toggle)
-  vmap <Leader>c <Plug>(caw:hatpos:toggle)
 '''
 
 [[plugins]]

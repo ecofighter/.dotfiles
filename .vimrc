@@ -84,9 +84,33 @@ augroup END
 "   autocmd Filetype qf nunmap gj
 "   autocmd Filetype qf nunmap gk
 " augroup END
-
-inoremap jj <ESC>
 " nnoremap j gj
 " nnoremap k gk
 " nnoremap gj j
 " nnoremap gk k
+
+inoremap jj <ESC>
+
+nnoremap [caw] <Nop>
+vnoremap [caw] <Nop>
+nmap <Leader>c [caw]
+vmap <Leader>c [caw]
+nmap <silent>[caw] <Plug>(caw:hatpos:toggle)
+vmap <silent>[caw] <Plug>(caw:hatpos:toggle)
+
+nnoremap [denite] <Nop>
+nmap <Leader>d [denite]
+nmap <C-p> :<C-u>Denite file_rec file_mru<CR>
+nmap <silent>[denite]f :<C-u>DeniteProjectDir file_rec<CR>
+nmap <silent>[denite]m :<C-u>Denite file_mru<CR>
+nmap <silent>[denite]b :<C-u>Denite buffer<CR>
+nmap <silent>[denite]g :<C-u>Denite grep<CR>
+nmap <silent>[denite]c :<C-u>Denite grep:::`expand('<cword>')`<CR>
+nmap <silent>[denite]r :<C-u>Denite -resume<CR>
+
+if has('nvim')
+  nnoremap [neoterm] <Nop>
+  nmap <Leader>t [neoterm]
+  tnoremap <silent> <ESC> <C-\><C-n>
+  nnoremap <silent>[neoterm]  :<C-u>Ttoggle<CR>
+endif
