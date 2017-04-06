@@ -23,12 +23,10 @@ execute 'set runtimepath^=' . s:dein_repo_dir
 
 if dein#load_state( s:dein_dir )
   call dein#begin( s:dein_dir )
-
   let s:toml = '~/.dein.toml'
   let s:toml_lazy = '~/.dein_lazy.toml'
   call dein#load_toml( s:toml, { 'lazy' : 0 })
   call dein#load_toml( s:toml_lazy, { 'lazy' : 1})
-
   call dein#end()
   call dein#save_state()
 endif
@@ -64,7 +62,8 @@ filetype plugin on
 filetype indent on
 syntax on
 if has('nvim')
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
+  " set termguicolors
+  set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 else
   let &t_SI = "\033[6 q"
   let &t_EI = "\033[2 q"
@@ -77,20 +76,17 @@ augroup indent_styles
   autocmd Filetype cpp setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1 
   autocmd Filetype cpp setlocal fo-=ro fo+=cql cindent 
 augroup END
-augroup quick_fixkeybind
-  autocmd!
-  autocmd Filetype qf nnoremap j j
-  autocmd Filetype qf nnoremap k k
-  autocmd Filetype qf nnoremap gj gj
-  autocmd Filetype qf nnoremap gk gk
-augroup END
 
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
-if has('nvim')
-  set sh=fish
-  tnoremap <silent> <ESC> <C-\><C-n>
-  nnoremap <silent> <Leader>tt :<C-u>Ttoggle<CR>
-endif
+" augroup quick_fixkeybind
+"   autocmd!
+"   autocmd Filetype qf nunmap j
+"   autocmd Filetype qf nunmap k
+"   autocmd Filetype qf nunmap gj
+"   autocmd Filetype qf nunmap gk
+" augroup END
+
+inoremap jj <ESC>
+" nnoremap j gj
+" nnoremap k gk
+" nnoremap gj j
+" nnoremap gk k
