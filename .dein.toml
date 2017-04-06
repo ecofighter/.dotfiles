@@ -17,8 +17,12 @@ repo = 'kassio/neoterm'
 if = 'has("nvim")'
 
 [[plugins]]
-repo = 'neomake/neomake'
-if = 'has("nvim")'
+repo = 'w0rp/ale'
+hook_add = '''
+  let g:ale_set_loclist = 1
+  let g:ale_set_quickfix = 0
+  let g:ale_open_list = 1
+'''
 
 [[plugins]]
 repo = 'tyru/caw.vim'
