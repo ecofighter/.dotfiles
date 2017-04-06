@@ -15,6 +15,11 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'kassio/neoterm'
 if = 'has("nvim")'
+hook_add = '''
+  set sh=bash
+  tnoremap <silent> <ESC> <C-\><C-n>
+  nnoremap <silent> <Leader>t :<C-u>Ttoggle<CR>
+'''
 
 [[plugins]]
 repo = 'w0rp/ale'
@@ -44,11 +49,63 @@ repo = 'tomasr/molokai'
 repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
 repo = 'itchyny/lightline.vim'
+depends = ['tpope/vim-fugitive']
 hook_add = '''
-	let g:lightline = {
-	\ 'colorscheme' : 'wombat'
-	\ }
+let g:lightline = {
+  \ 'colorscheme' : 'wombat',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'fugitive', 'filename' ] ]
+  \ },
+  \ 'separator': { 'left': '', 'right': '' },
+  \ 'subseparator': { 'left': '', 'right': '' },
+  \ 'component_function': {
+  \   'fugitive': 'LightlineFugitive',
+  \   'readonly': 'LightlineReadonly',
+  \   'modified': 'LightlineModified',
+  \   'filename': 'LightlineFilename',
+  \ },
+  \ }
+
+function! LightlineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightlineReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightlineFilename()
+  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+       \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function! LightlineFugitive()
+  if exists("*fugitive#head")
+    let branch = fugitive#head()
+    return branch !=# '' ? ' '.branch : ''
+  endif
+  return ''
+endfunction
 '''
 
 [[plugins]]
