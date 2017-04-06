@@ -77,6 +77,13 @@ augroup indent_styles
   autocmd Filetype cpp setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1 
   autocmd Filetype cpp setlocal fo-=ro fo+=cql cindent 
 augroup END
+augroup quick_fixkeybind
+  autocmd!
+  autocmd Filetype qf nnoremap j j
+  autocmd Filetype qf nnoremap k k
+  autocmd Filetype qf nnoremap gj gj
+  autocmd Filetype qf nnoremap gk gk
+augroup END
 
 nnoremap j gj
 nnoremap k gk
