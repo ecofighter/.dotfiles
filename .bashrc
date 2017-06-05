@@ -17,6 +17,7 @@ fi
 # Put your fun stuff here.
 export GOPATH="$HOME/.go"
 export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH"
+export RUST_SRC_PATH="$HOME/.rust_src/src"
 # export TERM=xterm-256color
 if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
