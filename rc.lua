@@ -577,6 +577,9 @@ awful.rules.rules = {
       callback = function(c)
         awful.placement.centered(c, nil)
       end},
+    { rule = { class = "Mikutter.rb" },
+      properties = {floating = true}
+    },
 }
 -- }}}
 
