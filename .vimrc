@@ -61,6 +61,9 @@ endif
 filetype plugin on
 filetype indent on
 syntax on
+set showbreak=>
+set breakindent
+set breakindentopt=
 if has('nvim')
   " set termguicolors
   set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
@@ -69,25 +72,13 @@ else
   let &t_EI = "\033[2 q"
 endif
 
-augroup indent_styles
-  autocmd!
-  autocmd Filetype c setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1 
-  autocmd Filetype c setlocal fo-=ro fo+=cql cindent 
-  autocmd Filetype cpp setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1 
-  autocmd Filetype cpp setlocal fo-=ro fo+=cql cindent 
-augroup END
-
-" augroup quick_fixkeybind
+" augroup indent_styles
 "   autocmd!
-"   autocmd Filetype qf nunmap j
-"   autocmd Filetype qf nunmap k
-"   autocmd Filetype qf nunmap gj
-"   autocmd Filetype qf nunmap gk
+"   autocmd Filetype c setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1 
+"   autocmd Filetype c setlocal fo-=ro fo+=cql cindent 
+"   autocmd Filetype cpp setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1 
+"   autocmd Filetype cpp setlocal fo-=ro fo+=cql cindent 
 " augroup END
-" nnoremap j gj
-" nnoremap k gk
-" nnoremap gj j
-" nnoremap gk k
 
 inoremap jj <ESC>
 
