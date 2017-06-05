@@ -29,8 +29,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'tyru/caw.vim'
-hook_add = '''
-'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -105,6 +103,27 @@ endfunction
 '''
 
 [[plugins]]
+if = 'has("python3")'
+repo = 'Shougo/denite.nvim'
+depends = ['neomru.vim', 'neoyank.vim']
+hook_post_source = '''
+  " ripgrep on file_rec source
+  " call denite#custom#var('file_rec', 'command',
+  "    \ ['rg', '--files', '--glob', '!.git', ''])
+  " the_silver_searcher
+  call denite#custom#var('file_rec', 'command',
+      \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+  
+  " Ripgrep command on grep source
+  call denite#custom#var('grep', 'command', ['rg'])
+  call denite#custom#var('grep', 'default_opts',
+      \ ['--vimgrep', '--no-heading', '--follow'])
+  call denite#custom#var('grep', 'recursive_opts', [])
+  call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+  call denite#custom#var('grep', 'separator', ['--'])
+  call denite#custom#var('grep', 'final_opts', [])
+'''
+[[plugins]]
 repo = 'Shougo/neocomplete'
 if = '!has("nvim")'
 hook_add = '''
@@ -123,3 +142,6 @@ hook_add = '''
     \ neosnippet#expandable_or_jumpable() ?
     \   "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 '''
+
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
