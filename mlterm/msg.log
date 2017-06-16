@@ -1,0 +1,146 @@
+Jun 15 11:16:26[4754] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:17:02[6192] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:17:19[6822] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:17:39[7559] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:19:03[10849] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:22:54[18351] ERROR(No such file or directory): BiDi: Could not load.
+Jun 15 11:23:07[20016] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:23:08[20072] ERROR(No such file or directory): Failed to exec /usr/libexec/mlterm/mlterm-menu.
+Jun 15 11:23:41[21200] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:23:47[21422] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:25:47[25512] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:29:49[25512] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 11:31:05[25512] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 11:31:23[25512] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 11:43:00[29679] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:45:17[1877] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:45:43[3024] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:46:01[3024] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 11:53:32[11656] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:57:01[19875] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:57:16[20521] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 11:57:47[21924] ERROR(No such file or directory): Failed to exec /usr/libexec/mlterm/mlterm-menu.
+Jun 15 12:05:07[9191] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 12:58:38[15421] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 13:00:07[18481] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 13:01:29[21464] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 13:01:35[21464] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 13:06:12[31183] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 13:06:27[31692] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 13:07:01[430] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 13:08:57[4560] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 13:14:11[596] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Jun 15 13:43:11[9095] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 13:43:42[13080] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 13:44:45[15436] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 13:45:52[17855] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 13:58:40[12189] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 13:59:26[13742] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:02:32[20686] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:02:57[21598] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:04:53[26029] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 14:05:13[26029] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:06:12[26029] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 14:06:19[29076] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 14:09:19[3123] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 14:11:57[9401] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 14:12:39[11211] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 14:12:55[11211] Font(id 6b1) width(12) is not matched with standard width(24).
+Jun 15 14:13:23[12562] Font(id 6b1) width(12) is not matched with standard width(24).
+Jun 15 14:13:37[12562] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 14:14:00[12562] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:14:20[15310] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:14:39[15310] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:15:02[15310] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 14:15:06[17403] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:15:07[17403] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:15:07[17403] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 15 14:15:22[17403] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:15:34[17403] Font(id 6b1) width(12) is not matched with standard width(24).
+Jun 15 14:15:40[17403] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:15:56[17403] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:16:42[17403] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:17:26[22893] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:17:26[22893] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:17:34[22893] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:17:47[22893] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:17:52[23915] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:17:53[23915] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:18:58[4183] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:18:58[4183] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:19:26[5279] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:19:26[5279] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:19:48[5279] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:19:52[6247] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:19:52[6247] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:20:00[6247] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:20:09[6247] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:20:09[6247] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:20:46[8199] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:20:46[8199] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:21:48[10457] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:21:48[10457] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:22:11[11282] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:22:11[11282] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:22:26[11873] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:22:26[11873] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:22:45[12674] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:22:45[12674] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:23:13[13728] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:23:13[13728] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:23:28[14282] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:23:28[14282] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:23:45[14985] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:23:45[14985] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:24:08[15872] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:24:09[15872] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:24:32[16785] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:24:32[16785] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:24:55[17751] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:24:55[17751] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:25:18[18636] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:25:18[18636] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:25:54[19949] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:25:54[19949] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:26:09[20559] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:26:09[20559] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:26:35[21514] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:26:35[21514] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:26:52[22159] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:26:52[22159] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:27:16[23070] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:27:16[23070] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:27:36[23070] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:27:53[24374] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:27:53[24374] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:28:07[24906] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:28:07[24906] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:28:30[24906] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:28:32[25897] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:28:32[25897] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:28:53[26661] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:28:53[26661] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:28:59[26661] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:29:18[27589] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:29:18[27589] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:30:21[27589] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:30:49[27589] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:31:40[32601] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 15 14:31:40[32601] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 15 14:32:57[32601] only_use_unicode_font and not_use_unicode_font options cannot be used at the same time.
+Jun 16 11:13:13[15741] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 16 11:13:39[16538] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 16 11:15:38[16538] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 16 11:16:40[16538] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 16 11:17:17[16538] Set use_combining=false forcibly to enable use_dynamic_comb.
+Jun 16 11:17:33[16538] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 16 11:18:16[16538] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 16 11:18:16[16538] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 16 11:18:53[16538] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 16 11:18:53[16538] Font(id 2b1) width(12) is not matched with standard width(24).
+Jun 16 12:01:11[11719] Font(id b1) width(12) is not matched with standard width(14).
+Jun 16 12:01:11[11719] Font(id 4b1) width(12) is not matched with standard width(14).
+Jun 16 12:01:11[11719] Font(id 2b1) width(24) is not matched with standard width(28).
+Jun 16 12:02:00[11719] Font(id b1) width(12) is not matched with standard width(14).
+Jun 16 12:02:00[11719] Font(id 4b1) width(12) is not matched with standard width(14).
+Jun 16 12:02:00[11719] Font(id 2b1) width(24) is not matched with standard width(28).
