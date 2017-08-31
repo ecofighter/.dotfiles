@@ -55,20 +55,21 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "urxvtd", "unclutter -root" })
+
+run_once({ "qjackctl", "unclutter -root", "albert &", "compton -b --config ~/.config/compton/compton.conf", "redshift-gtk", "thunderbird-bin", "slack -u", "mpd &"})
 -- }}}
 
 -- {{{ Variable definitions
 local chosen_theme = "copland"
 local modkey       = "Mod4"
 local altkey       = "Mod1"
-local terminal     = "urxvtc" or "xterm"
+local terminal     = "mlterm" or "xterm"
 local editor       = os.getenv("EDITOR") or "nano" or "vi"
 local gui_editor   = "gvim"
 local browser      = "google-chrome-unstable"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 awful.layout.layouts = {
     -- awful.layout.suit.floating,
     -- awful.layout.suit.tile,
@@ -361,28 +362,38 @@ globalkeys = awful.util.table.join(
     -- ALSA volume control
     awful.key({ altkey }, "Up",
         function ()
-            os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+            -- os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+            os.execute(string.format("sh -c 'pactl set-sink-volume %d +4%%'", beautiful.volume.sink))
+            -- awful.spawn.with_shell("pactl set-sink-volume 1 +10%")
             beautiful.volume.update()
         end),
     awful.key({ altkey }, "Down",
         function ()
-            os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+            -- os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+            os.execute(string.format("sh -c 'pactl set-sink-volume %d -4%%'", beautiful.volume.sink))
+            -- awful.spawn.with_shell("pactl set-sink-volume 1 -10%")
             beautiful.volume.update()
         end),
     awful.key({ altkey }, "m",
         function ()
-            os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+            -- os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+            os.execute(string.format("pactl set-sink-mute %d toggle", beautiful.volume.sink ))
+            -- awful.spawn.with_shell("pactl set-sink-mute 1 toggle")
             beautiful.volume.update()
         end),
     awful.key({ altkey, "Control" }, "m",
         function ()
-            os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
+            -- os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
+            os.execute(string.format("pactl set-sink-volume %d 100%%", beautiful.volume.sink))
+            -- awful.spawn.with_shell("pactl set-sink-volume 1 100%")
             beautiful.volume.update()
         end),
 
 		awful.key({ altkey, "Control" }, "0",
 				function ()
-						os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
+						-- os.execute(string.format("amixer -q set %s 0%", beautiful.volume.channel))
+            os.execute(string.format("pactl set-sink-volume %d 0%%", beautiful.volume.sink))
+            -- awful.spawn.with_shell("pactl set-sink-volume 1 0%")
 						beautiful.volume.update()
 				end),
 
@@ -427,7 +438,7 @@ globalkeys = awful.util.table.join(
 
     -- User programs
     awful.key({ modkey }, "e", function () awful.spawn(gui_editor) end),
-    awful.key({ modkey }, "q", function () awful.spawn(browser) end),
+    awful.key({ modkey }, "q", function () awful.spawn(browser) end)
 
     -- Default
     --[[ Menubar
@@ -435,7 +446,7 @@ globalkeys = awful.util.table.join(
               {description = "show the menubar", group = "launcher"})
     --]]
     -- dmenu
-    awful.key({ modkey }, "a", function () awful.spawn("j4-dmenu-desktop") end)
+    -- awful.key({ modkey }, "a", function () awful.spawn("j4-dmenu-desktop") end)
     -- -- Prompt
     -- awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
     --           {description = "run prompt", group = "launcher"}),
@@ -578,6 +589,9 @@ awful.rules.rules = {
         awful.placement.centered(c, nil)
       end},
     { rule = { class = "Mikutter.rb" },
+      properties = {floating = true}
+    },
+    { rule = { class = "qjackctl" },
       properties = {floating = true}
     },
 }

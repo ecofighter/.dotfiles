@@ -5,18 +5,31 @@ repo = 'Shougo/neomru.vim'
 repo = 'Shougo/neoyank.vim'
 
 [[plugins]]
-repo = 'Shougo/neosnippet'
-depends = ['neosnippet-snippets']
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertCharPre'
+if = 'has("nvim")'
 hook_source = '''
-              imap <C-k> <Plug>(neosnippet_expand_or_jump)
-              smap <C-k> <Plug>(neosnippet_expand_or_jump)
-              xmap <C-k> <Plug>(neosnippet_expand_target)
-              if has('conceal')
-              set conceallevel=2 concealcursor=niv
-              endif
-              '''
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#auto_complete_delay = 0
+  let g:deoplete#auto_complete_start_length = 1
+  let g:deoplete#enable_camel_case = 0
+  let g:deoplete#enable_ignore_case = 0
+  let g:deoplete#enable_refresh_always = 0
+  let g:deoplete#enable_smart_case = 1
+  let g:deoplete#file#enable_buffer_path = 1
+  let g:deoplete#max_list = 10000
+
+  inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ deoplete#mappings#manual_complete()
+
+  function! s:check_back_space() abort "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~ '\s'
+  endfunction"}}}
+'''
 on_i = 1
-on_ft = ['snippet']
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -59,15 +72,21 @@ hook_add =  '''
 [[plugins]]
 repo = 'neovimhaskell/haskell-vim'
 on_ft = 'haskell'
-
-[[plugins]]
-repo = 'itchyny/vim-haskell-indent'
-on_ft = 'haskell'
-
-
+hook_add = '''
+let g:haskellmode_completion_ghc = 0
+'''
 
 [[plugins]]
 repo = 'eagletmt/neco-ghc'
+on_ft = 'haskell'
+hook_add = '''
+let g:necoghc_enable_detailed_browse = 1
+let g:necoghc_use_stack = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+'''
+
+[[plugins]]
+repo = 'itchyny/vim-haskell-indent'
 on_ft = 'haskell'
 
 [[plugins]] 
@@ -88,7 +107,7 @@ let g:racer_cmd = 'racer'
 
 [[plugins]]
 repo = 'lervag/vimtex'
-on_path = '.tex'
+on_ft = ['tex', 'plaintex']
 hook_source = '''
               let g:vimtex_latexmk_options = '-pdf'
               let g:vimtex_latexmk_continuous = 1
@@ -99,5 +118,20 @@ hook_source = '''
 repo = "kovisoft/slimv"
 on_ft = "lisp"
 hook_source = '''
-              let g:slimv_swank_cmd = 'T sbcl --load /home/haneta/.cache/neovim/dein/repos/github.com/kovisoft/slimv/slime/start-swank.lisp'
+              let g:slimv_lisp = 'ros run'
+              let g:slimv_impl = 'sbcl'
+              let g:slimv_swank_cmd = 'T ros -s swank -e "(swank:create-server :port 4005 :dont-close t)" wait'
+              let g:slimv_repl_split = 4
+              let g:paraedit_electric_return = 0
               '''
+
+[[plugins]]
+repo = "ElmCast/elm-vim"
+on_ft = "elm"
+hook_source = '''
+              let g:elm_setup_keybindings = 0
+              '''
+
+[[plugins]]
+repo = 'slashmili/alchemist.vim'
+on_ft = ["elixir", "eelixir"]

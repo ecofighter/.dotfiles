@@ -2,13 +2,13 @@
 [ -f /etc/xprofile  ] && source /etc/profile
 [ -f ~/.xprofile ] && source ~/.xprofile
 eval "$(dbus-launch --sh-syntax --exit-with-session)"
-export DefaultIMModule=fcitx
-export XMODIFIERS=@im=fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
+export DefaultIMModule=ibus
+export XMODIFIERS=@im=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
 export XKB_DEFAULT_LAYOUT=jp
-export XDG_RUNTIME_DIR=/home/haneta/.xdg
-fcitx-autostart
+export XDG_RUNTIME_DIR=/run/user/1000
+export XDG_CONFIG_DIR=~/.config
 xmodmap ~/.Xmodmap
-compton -b --config ~/.config/compton/compton.conf
+ibus-daemon -d -r --xim
 exec awesome

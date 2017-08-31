@@ -1,0 +1,4 @@
+Control+1=OPEN_SCREEN
+Control+2=OPEN_PTY
+Control+3=NEXT_PTY
+Control+4=PREV_PTY

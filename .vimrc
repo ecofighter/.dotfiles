@@ -51,10 +51,14 @@ set conceallevel=0
 let g:tex_conceal=''
 set mouse=nvc
 set backspace=indent,eol,start
-colorscheme hybrid
+set wildmode=list,full
+set background=dark 
+highlight turn gui=standout cterm=standout
+call matchadd("turn", ".\%>81v")
+" colorscheme hybrid_material
 " colorscheme molokai
 " colorscheme iceberg
-set background=dark 
+colorscheme gruvbox
 if executable('rg')
   set grepprg=rg\ --follow\ --vimgrep
 endif
@@ -65,7 +69,7 @@ set showbreak=>
 set breakindent
 set breakindentopt=
 if has('nvim')
-  " set termguicolors
+  set termguicolors
   set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 else
   let &t_SI = "\033[6 q"
@@ -91,13 +95,16 @@ vmap <silent>[caw] <Plug>(caw:hatpos:toggle)
 
 nnoremap [denite] <Nop>
 nmap <Leader>d [denite]
-nmap <C-p> :<C-u>Denite file_rec file_mru<CR>
+nmap <silent>[denite]p :<C-u>Denite file_rec file_mru<CR>
 nmap <silent>[denite]f :<C-u>DeniteProjectDir file_rec<CR>
 nmap <silent>[denite]m :<C-u>Denite file_mru<CR>
 nmap <silent>[denite]b :<C-u>Denite buffer<CR>
 nmap <silent>[denite]g :<C-u>Denite grep<CR>
 nmap <silent>[denite]c :<C-u>Denite grep:::`expand('<cword>')`<CR>
 nmap <silent>[denite]r :<C-u>Denite -resume<CR>
+
+nnoremap [thumbnail] <Nop>
+nmap <Leader>b :<C-u>Thumbnail<CR>
 
 if has('nvim')
   nnoremap [neoterm] <Nop>
