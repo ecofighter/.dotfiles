@@ -8,5 +8,6 @@ set mousehide
 
 if has('win32')
   set guifont=Ricty_Diminished:h12
+  set guifontwide=Ricty_Diminished:h12
   set linespace=0
 endif
