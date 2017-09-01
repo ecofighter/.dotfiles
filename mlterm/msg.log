@@ -2732,3 +2732,677 @@ Aug 31 20:59:59[8579] ERROR(Resource temporarily unavailable): BiDi: Could not l
 Aug 31 20:59:59[8579] Font(id 2b1) width(45) is not matched with standard width(30).
 Aug 31 21:00:00[8628] ERROR(No such file or directory): Failed to exec /usr/libexec/mlterm/mlterm-menu.
 Aug 31 21:00:30[8579] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 21:16:40[14916] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:16:40[14916] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:16:40[14916] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:21:58[6806] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:21:58[6806] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:21:58[6806] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:22:05[7114] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:22:05[7114] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:22:05[7114] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:22:15[7570] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:22:15[7570] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:22:15[7570] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:22:21[7835] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:22:21[7835] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:22:21[7835] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:22:45[7835] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 21:23:05[9493] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:23:05[9493] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:23:05[9493] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:23:06[9493] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 21:25:26[3043] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:25:26[3043] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:25:26[3043] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:25:47[3845] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:25:47[3845] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:25:47[3845] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:26:22[4878] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:26:22[4878] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:26:22[4878] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:26:27[5109] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:26:27[5109] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:26:27[5109] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:26:29[5109] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 21:26:45[5764] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:26:45[5764] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:26:45[5764] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:35:53[3043] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 21:36:03[28462] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:36:03[28462] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:36:03[28462] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:36:07[28462] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 21:38:19[7638] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:38:19[7638] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:38:19[7638] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:40:53[7638] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 21:49:16[12254] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:49:16[12254] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:49:17[12254] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:49:31[12921] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:49:31[12921] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:49:31[12921] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:53:35[22549] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:53:35[22549] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:53:36[22549] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:56:49[28928] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:56:49[28928] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:56:49[28928] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:57:05[29579] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:57:05[29579] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:57:05[29579] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:57:32[30635] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:57:32[30635] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:57:33[30635] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:57:50[31324] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:57:50[31324] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:57:50[31324] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:59:28[2496] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:59:28[2496] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:59:28[2496] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:59:43[3122] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:59:43[3122] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:59:43[3122] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 21:59:51[3415] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 21:59:51[3415] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 21:59:52[3415] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:00:50[3122] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:08:18[22336] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:08:18[22336] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:08:18[22336] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:08:32[22336] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:08:37[23042] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:08:37[23042] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:08:37[23042] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:09:26[24643] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:09:26[24643] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:09:26[24643] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:10:04[24643] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:10:12[25935] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:10:12[25935] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:10:12[25935] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:10:22[26321] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:10:22[26321] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:10:22[26321] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:11:38[26321] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:12:39[30855] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:12:39[30855] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:12:39[30855] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:14:13[2210] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:14:13[2210] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:14:13[2210] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:14:29[2732] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:14:29[2732] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:14:29[2732] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:15:11[2732] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:18:24[10287] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:18:24[10287] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:18:25[10287] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:18:39[10860] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:18:39[10860] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:18:39[10860] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:18:45[10860] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:21:59[16899] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:21:59[16899] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:21:59[16899] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:23:10[16899] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:26:45[25358] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:26:45[25358] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:26:45[25358] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:30:33[32209] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:30:33[32209] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:30:34[32209] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:30:48[32209] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:31:15[1157] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:31:15[1157] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:31:15[1157] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:31:36[1782] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:31:36[1782] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:31:36[1782] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:31:41[2067] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:31:41[2067] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:31:41[2067] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:31:52[2489] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:31:52[2489] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:31:52[2489] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:31:53[2591] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:31:53[2591] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:31:53[2591] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:32:15[3401] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:32:15[3401] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:32:15[3401] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:34:41[3401] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:35:20[9298] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:35:20[9298] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:35:20[9298] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:35:59[9298] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:38:42[15485] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:38:42[15485] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:38:42[15485] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:41:04[15485] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:41:26[21126] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:41:26[21126] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:41:26[21126] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:41:33[21126] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:41:48[22102] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:41:48[22102] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:41:48[22102] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:42:56[22102] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:48:41[4182] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:48:41[4182] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:48:41[4182] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:49:04[5231] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:49:04[5231] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:49:04[5231] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:49:15[5231] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:50:06[7709] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:50:06[7709] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:50:06[7709] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:50:24[7709] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:51:02[10076] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:51:02[10076] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:51:02[10076] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:51:53[12507] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:51:53[12507] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:51:53[12507] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:52:22[13941] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:52:22[13941] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:52:23[13941] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:53:34[13941] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:54:04[18761] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:54:04[18761] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:54:05[18761] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:54:56[21134] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:54:56[21134] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:54:56[21134] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:55:00[21134] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 22:55:32[22900] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:55:32[22900] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:55:32[22900] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:56:06[24578] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:56:06[24578] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:56:06[24578] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:56:42[26491] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:56:42[26491] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:56:43[26491] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:58:41[31867] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 22:58:41[31867] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 22:58:42[31867] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 22:59:22[31867] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:00:26[3566] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:00:26[3566] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:00:26[3566] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:01:49[6910] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:01:49[6910] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:01:50[6910] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:03:05[10127] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:03:05[10127] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:03:06[10127] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:05:45[16568] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:05:45[16568] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:05:45[16568] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:05:53[16568] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:06:36[18503] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:06:36[18503] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:06:37[18503] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:07:14[20022] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:07:14[20022] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:07:14[20022] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:07:23[20022] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:09:17[25298] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:09:17[25298] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:09:17[25298] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:09:29[25298] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:14:26[24580] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:14:26[24580] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:14:26[24580] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:14:52[25770] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:14:52[25770] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:14:52[25770] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:15:30[27805] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:15:30[27805] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:15:31[27805] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:15:54[29255] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:15:54[29255] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:15:55[29255] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:16:49[29255] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:17:04[393] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:17:04[393] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:17:04[393] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:17:11[393] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:18:04[3137] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:18:04[3137] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:18:04[3137] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:18:09[3432] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:18:09[3432] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:18:09[3432] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:18:37[4836] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:18:37[4836] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:18:37[4836] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:18:39[5010] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:18:39[5010] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:18:39[5010] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:18:44[5010] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:20:06[9430] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:20:06[9430] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:20:07[9430] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:20:07[9430] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:25:30[25358] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:25:30[25358] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:25:30[25358] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:25:47[25358] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:26:04[27091] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:26:04[27091] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:26:05[27091] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:26:25[28171] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:26:25[28171] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:26:25[28171] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:26:46[28171] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:27:11[30465] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:27:11[30465] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:27:11[30465] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:27:35[30465] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:27:55[32605] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:27:55[32605] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:27:55[32605] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:28:08[863] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:28:08[863] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:28:08[863] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:28:16[1295] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:28:16[1295] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:28:16[1295] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:28:41[1295] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:30:35[7689] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:30:35[7689] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:30:35[7689] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:30:37[7689] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:32:32[13028] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:32:32[13028] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:32:33[13028] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:32:45[13028] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:33:11[14630] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:33:11[14630] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:33:11[14630] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:33:17[14630] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:33:44[16332] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:33:44[16332] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:33:44[16332] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:34:31[18445] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:34:31[18445] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:34:31[18445] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:35:42[22155] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:35:42[22155] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:35:42[22155] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:35:44[22266] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:35:44[22266] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:35:45[22266] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:36:17[23822] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:36:17[23822] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:36:17[23822] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:36:49[22155] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:37:10[26082] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:37:10[26082] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:37:10[26082] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:37:55[28838] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:37:55[28838] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:37:55[28838] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:38:03[29253] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:38:03[29253] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:38:03[29253] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:38:04[29253] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:40:49[4792] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:40:49[4792] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:40:49[4792] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:41:02[5449] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:41:02[5449] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:41:02[5449] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:41:08[5822] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:41:08[5822] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:41:08[5822] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:41:12[5822] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:41:31[6982] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:41:31[6982] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:41:32[6982] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:41:39[7416] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:41:39[7416] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:41:39[7416] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:41:53[8219] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:41:53[8219] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:41:54[8219] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:42:02[8713] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:42:02[8713] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:42:02[8713] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:42:06[8713] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:43:04[11598] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:43:04[11598] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:43:04[11598] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:43:13[12075] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:43:13[12075] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:43:13[12075] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:43:42[12075] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:44:43[16354] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:44:43[16354] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:44:43[16354] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:44:48[16636] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:44:48[16636] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:44:48[16636] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:44:54[16636] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:45:14[17994] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:45:14[17994] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:45:14[17994] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:45:16[18150] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:45:16[18150] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:45:16[18150] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:45:34[18150] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:47:12[23268] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:47:12[23268] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:47:12[23268] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:51:29[3142] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:51:29[3142] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:51:29[3142] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:51:32[3384] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:51:32[3384] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:51:32[3384] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:52:08[3066] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:52:08[3066] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:52:09[3066] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:52:10[3308] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:52:10[3308] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:52:11[3308] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:52:58[5567] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:52:58[5567] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:52:58[5567] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:53:00[5748] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:53:00[5748] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:53:00[5748] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:53:15[6623] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:53:15[6623] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:53:15[6623] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:53:27[7174] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:53:27[7174] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:53:28[7174] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:53:42[7947] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:53:42[7947] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:53:42[7947] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:53:44[8131] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:53:44[8131] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:53:44[8131] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:54:25[8131] Font(id 6b1) width(45) is not matched with standard width(30).
+Aug 31 23:54:33[10506] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:54:33[10506] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:54:33[10506] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:54:56[12010] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:54:56[12010] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:54:57[12010] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:55:36[3175] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:55:36[3175] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:55:36[3175] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:56:21[5790] Set use_combining=false forcibly to enable use_dynamic_comb.
+Aug 31 23:56:21[5790] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Aug 31 23:56:21[5790] Font(id 2b1) width(45) is not matched with standard width(30).
+Aug 31 23:56:26[5790] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:02:35[3070] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:02:35[3070] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:02:36[3070] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:02:38[3297] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:02:38[3297] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:02:38[3297] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:04:15[3297] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:04:58[3092] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:04:58[3092] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:04:59[3092] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:05:03[3413] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:05:03[3413] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:05:03[3413] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:06:07[3413] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:06:56[3049] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:06:56[3049] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:06:57[3049] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:06:59[3295] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:06:59[3295] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:07:00[3295] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:08:35[3295] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:09:44[3105] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:09:44[3105] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:09:45[3105] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:09:45[3262] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:09:45[3262] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:09:46[3262] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:10:35[3262] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:10:48[6152] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:10:48[6152] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:10:48[6152] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:10:53[6458] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:10:53[6458] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:10:53[6458] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:11:16[6458] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:12:22[10446] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:12:22[10446] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:12:23[10446] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:15:00[17823] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:15:00[17823] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:15:00[17823] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:15:34[17823] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:16:19[3048] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:16:19[3048] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:16:19[3048] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:16:26[3490] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:16:26[3490] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:16:26[3490] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:17:10[3490] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:18:24[8454] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:18:24[8454] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:18:24[8454] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:18:56[8454] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:21:07[3121] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:21:07[3121] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:21:08[3121] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:21:12[3490] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:21:12[3490] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:21:12[3490] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:21:13[3490] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:21:24[4084] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:21:24[4084] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:21:24[4084] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:22:24[3068] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:22:24[3068] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:22:24[3068] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:23:46[7091] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:23:46[7091] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:23:46[7091] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:24:27[7091] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:24:55[10265] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:24:55[10265] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:24:55[10265] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:25:23[10265] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:27:37[17285] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:27:37[17285] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:27:37[17285] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:29:07[25142] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:29:07[25142] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:29:08[25142] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:29:38[31503] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:29:38[31503] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:29:38[31503] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:31:26[3906] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:31:26[3906] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:31:26[3906] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:37:22[3038] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:37:22[3038] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:37:22[3038] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:38:14[4956] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:38:14[4956] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:38:14[4956] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:40:25[4956] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:40:37[11663] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:40:37[11663] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:40:37[11663] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:45:28[3058] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:45:28[3058] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:45:28[3058] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:45:31[3310] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:45:31[3310] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:45:31[3310] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:49:06[3032] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:49:06[3032] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:49:07[3032] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:49:11[3398] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:49:11[3398] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:49:11[3398] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:49:26[4202] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:49:26[4202] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:49:26[4202] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:49:43[5098] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:49:43[5098] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:49:43[5098] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:49:47[5377] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 00:49:47[5377] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 00:49:47[5377] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 00:50:50[5377] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 00:52:34[5098] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:04:19[11763] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:04:19[11763] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:04:19[11763] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:04:23[12088] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:04:23[12088] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:04:23[12088] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:04:26[12088] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:05:28[3025] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:05:28[3025] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:05:29[3025] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:05:38[3600] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:05:38[3600] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:05:38[3600] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:06:01[4597] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:06:01[4597] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:06:02[4597] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:06:17[5387] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:06:17[5387] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:06:17[5387] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:07:19[3600] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:09:21[13101] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:09:21[13101] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:09:21[13101] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:09:23[13288] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:09:23[13288] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:09:23[13288] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:10:15[13288] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:14:04[3100] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:14:04[3100] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:14:04[3100] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:14:06[3339] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:14:06[3339] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:14:06[3339] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:14:43[3339] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:17:16[11150] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:17:16[11150] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:17:16[11150] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:17:51[11150] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:19:50[17679] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:19:50[17679] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:19:50[17679] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:19:52[17679] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:22:19[3107] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:22:19[3107] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:22:20[3107] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:22:24[3435] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:22:24[3435] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:22:24[3435] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:22:25[3435] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:22:31[3800] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:22:31[3800] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:22:31[3800] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:25:40[3800] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:26:43[15736] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:26:43[15736] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:26:43[15736] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:26:47[15992] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:26:47[15992] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:26:47[15992] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:27:38[15992] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:27:52[15736] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:29:46[24502] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:29:46[24502] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:29:46[24502] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:30:15[24502] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:31:26[28754] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:31:26[28754] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:31:27[28754] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:31:41[28754] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 01:34:56[5169] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:34:56[5169] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:34:56[5169] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 01:48:27[8296] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 01:48:27[8296] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 01:48:27[8296] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:09:26[29861] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:09:26[29861] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:09:26[29861] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:11:43[3337] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:11:43[3337] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:11:43[3337] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:11:59[4205] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:11:59[4205] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:12:00[4205] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:13:40[3337] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 02:15:49[14092] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:15:49[14092] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:15:50[14092] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:18:55[22449] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:18:55[22449] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:18:55[22449] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:19:02[22449] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 02:20:01[25166] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:20:01[25166] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:20:01[25166] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:21:13[25166] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 02:23:30[1886] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:23:30[1886] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:23:30[1886] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:24:14[3689] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:24:14[3689] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:24:14[3689] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:24:18[3689] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 02:29:08[16371] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:29:08[16371] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:29:08[16371] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:29:30[17408] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:29:30[17408] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:29:30[17408] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:30:27[20056] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:30:27[20056] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:30:27[20056] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:31:07[21862] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:31:07[21862] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:31:07[21862] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:35:12[1787] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:35:12[1787] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:35:12[1787] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:35:16[2013] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:35:16[2013] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:35:16[2013] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:35:28[2620] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:35:28[2620] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:35:28[2620] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:35:32[2806] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:35:32[2806] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:42:38[20868] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:42:38[20868] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:42:38[20868] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:47:17[1654] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:47:17[1654] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:47:17[1654] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 02:53:15[22410] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 02:53:15[22410] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 02:53:15[22410] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 03:26:45[19395] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 03:26:45[19395] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 03:26:46[19395] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 03:37:59[28849] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 03:37:59[28849] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 03:37:59[28849] Font(id 2b1) width(45) is not matched with standard width(30).
+Sep  1 03:43:12[19395] Font(id 6b1) width(45) is not matched with standard width(30).
+Sep  1 03:43:25[25939] Set use_combining=false forcibly to enable use_dynamic_comb.
+Sep  1 03:43:25[25939] ERROR(Resource temporarily unavailable): BiDi: Could not load.
+Sep  1 03:43:25[25939] Font(id 2b1) width(45) is not matched with standard width(30).

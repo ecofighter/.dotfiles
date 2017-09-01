@@ -1,10 +1,4 @@
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-
-[[plugins]]
-repo = 'Shougo/neoyank.vim'
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertCharPre'
 if = 'has("nvim")'
@@ -29,7 +23,22 @@ hook_source = '''
     return !col || getline('.')[col - 1] =~ '\s'
   endfunction"}}}
 '''
+
+[[plugins]]
+repo = 'w0rp/ale'
 on_i = 1
+hook_add = """
+  let g:ale_set_loclist = 1
+  let g:ale_set_quickfix = 0
+  let g:ale_open_list = 1
+  let g:ale_linters = {
+    \ 'haskell': ['hlint', 'stack-ghc-mod'],
+    \ 'rust': ['cargo',],
+    \ 'elixir': ['credo']
+  \}
+  nmap <silent> <C-n> <Plug>(ale_next_wrap)
+  nmap <silent> <C-n> <Plug>(ale_previous_wrap)
+"""
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -67,7 +76,8 @@ hook_add =  '''
                 \                       ],
                 \ 'exec'  : '%c %o %a %s',
               \ },
-            \ }'''
+            \ }
+'''
 
 [[plugins]]
 repo = 'neovimhaskell/haskell-vim'
@@ -131,6 +141,10 @@ on_ft = "elm"
 hook_source = '''
               let g:elm_setup_keybindings = 0
               '''
+
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+on_ft = ["elixir", "eelixir"]
 
 [[plugins]]
 repo = 'slashmili/alchemist.vim'

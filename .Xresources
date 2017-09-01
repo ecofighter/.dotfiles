@@ -6,7 +6,7 @@ Xft.hinting:	1
 Xft.antialias:	1
 Xft.rgba:	rgb
 
-URxvt*font:	xft:Ricty Nerd Font:size=12
+URxvt*font:	xft:Ricty Nerd Font:size=12, xft:Inconsolata for Powerline:size=12
 URxvt*depth:  32
 URxvt*perl-ext: xim-onthespot,tabbedex
 URxvt*inputMethod: ibus
@@ -30,30 +30,67 @@ URxvt*fadeColor:  rgba:0000/0000/0000/dddd
 #define t_blue #81A2BE
 #define t_purple #B294BB
 
+! -----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
+
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
+
 URxvt.background: rgba:0029/0031/0033/cccc
 URxvt.foreground: t_foreground
-! black
-*color0: t_current_line
-*color8: t_selection
-! red
-*color1: #A54242
-*color9: t_red
-! green
-*color2: #8C9440
-*color10: t_green
-! yellow
-*color3: t_orange
-*color11: t_yellow
-! blue
-*color4: #5F819D
-*color12: t_blue
-! magenta
-*color5: #85678F
-*color13: t_purple
-! cyan
-*color6: #5E8D87
-*color14: t_aqua
-! white
-*color7: t_comment
-*color15: t_foreground
-URxvt*url-launcher:  google-chrome-stable
+! ! black
+! *color0: t_current_line
+! *color8: t_selection
+! ! red
+! *color1: #A54242
+! *color9: t_red
+! ! green
+! *color2: #8C9440
+! *color10: t_green
+! ! yellow
+! *color3: t_orange
+! *color11: t_yellow
+! ! blue
+! *color4: #5F819D
+! *color12: t_blue
+! ! magenta
+! *color5: #85678F
+! *color13: t_purple
+! ! cyan
+! *color6: #5E8D87
+! *color14: t_aqua
+! ! white
+! *color7: t_comment
+! *color15: t_foreground
+! URxvt*url-launcher:  google-chrome-stable
