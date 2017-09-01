@@ -1,0 +1,370 @@
+;:set syn=dosini
+
+[global/wm]
+margin-top = 5
+margin-bottom = 2
+
+
+[colors]
+;orange = #FF6200
+;orange = #d65d0e
+darkgray = ${xrdb:color8}
+orange = ${xrdb:color9}
+white = #d1d1d1
+gray = #585858
+black = #090909
+red = #c795ae
+blue = #95aec7
+yellow = #c7ae95
+green = #aec795
+#background = #1f222d
+background = ${xrdb:background}
+background-alt = #40545E
+#foreground = #dfdfdf
+foreground = ${xrdb:foreground}
+foreground-alt = #55
+primary = #1f222d
+secondary = #FF6200
+alert = #bd2c40
+
+
+
+
+[bar/bar]
+monitor = eDP-1
+bottom = false
+wm-restack = bspwm
+width = 100%
+height = 32
+offset-x = 0
+offset-y = 0
+
+locale = ja-JP.UTF-8
+
+;override-redirect = true
+
+enable-ipc = true
+
+padding-left = 2
+padding-right = 2
+
+module-margin-right = 2
+module-margin-left = 2
+
+modules-right = mpd wlan cpu xbacklight volume battery date
+modules-center =
+modules-left = bspwm xwindow
+
+separator =
+
+; background = ${colors.background}
+background = #282828
+foreground = ${colors.foreground}
+
+underline-size = 2
+underline-color = ${colors.white}
+
+tray-detached = false
+tray-position = right
+tray-offset-x = 0
+tray-offset-y = 0
+;tray-maxsize = 16
+tray-padding = 1
+tray-transparent = false
+; tray-background = #AF282828
+tray-scale = 1.0
+
+;font-0 = "Liberation Sans:size=9;0"
+font-0 = "Koruri:size=14;0"
+;font-0 = "Hack:size=8;0"
+font-1 = "FontAwesome:size=14;0"
+font-2 = "Cousine:size=14;0"
+font-3 = "Artwiz Lemon:size=14;0"
+font-4 = "Roboto:size=7;0"
+
+[module/xwindow]
+label-font = 0
+type = internal/xwindow
+format-underline = ${colors.orange}
+label = %title%
+label-maxlen = 30
+
+[module/cpu]
+type = internal/cpu
+format = <label> <ramp-coreload>
+label =  CPU
+
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+
+[module/wlan]
+type = internal/network
+interface = wlp1s0
+; label-connected =  %essid% :  %upspeed%  %downspeed%
+label-connected =  %essid%
+format-connected-underline = ${colors.orange}
+format-disconected-underline = ${colors.orange}
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format =  <label>
+label = %percentage%%
+
+format-underline = ${colors.orange}
+
+bar-width = 6
+bar-indicator = |
+bar-indicator-foreground = #ff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+enable-scroll=true
+
+[module/menu0]
+type = custom/menu
+;font = 3
+
+format = <label-toggle> <menu>
+format-underline = ${colors.orange}
+format-padding = 1
+;label-separator = |
+
+menu-0-0 =  shutdown
+menu-0-0-exec = systemctl poweroff
+menu-0-1 =  reboot
+menu-0-1-exec = systemctl reboot
+menu-0-2 =  logout
+menu-0-2-exec = bspc quit
+menu-0-3 =  suspend
+menu-0-3-exec = i3lock -i /home/davide/Immagini/rick_morty_lockscreen_laptop.png && systemctl suspend
+menu-0-4 =  cancel
+
+label-open =   
+label-close =
+
+
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+format-online = <icon-prev>   <toggle>   <icon-next>  <bar-progress>  <label-song>
+format-online-underline = ${colors.orange}
+format-online-padding = 1
+
+#label-song-font = 4
+label-song = %artist% - %title% 
+label-offline = 
+icon-play =  
+icon-pause = 
+icon-prev = 
+icon-next = 
+
+bar-progress-width = 15
+bar-progress-indicator = |
+bar-progress-fill = ─
+bar-progress-empty = ─
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = true
+strip-wsnumbers = true
+pin-workspaces = true
+enable-click = true
+
+label-mode-padding = 2
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background}
+
+label-focused = "%name%"
+label-focused-background =${colors.darkgray}  
+#${module/bspwm.label-focused-background}
+label-focused-underline = ${colors.orange}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+
+label-unfocused = "%name%"
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-underline = ${colors.background}
+
+
+label-urgent = %name%!
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
+
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+;label-focused-font = 1
+label-focused-background = ${colors.background-alt}
+;label-focused-underline= ${colors.primary}
+label-focused-underline= ${colors.orange}
+label-focused-padding = 1
+
+label-occupied = %icon%
+label-occupied-padding = 1
+
+label-urgent = %icon%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-default = x
+
+
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+format = <label> <bar> 
+format-underline = ${colors.orange}
+label = 
+
+bar-width = 6
+bar-indicator = 
+bar-indicator-foreground = #ff
+;bar-indicator-font = 2
+bar-fill = ─
+;bar-fill-font = 2
+bar-fill-foreground = ${colors.orange}
+bar-empty = ─
+;bar-empty-font = 2
+bar-empty-foreground = #55
+
+
+[module/date]
+type = internal/date
+#date-alt =   %A %H:%M 
+date =  %A %d %b  %H:%M
+; date =  %A %m %d  %H:%M
+interval = 5
+format-underline = ${colors.orange}
+;format-background = ${colors.black}
+format-foreground = ${colors.foreground}
+format-padding = 1
+
+
+[module/volume]
+type = internal/volume
+
+master-soundcard=pulse
+master-mixer=Master
+format-volume = <ramp-volume> <label-volume> 
+
+format-volume-underline = ${colors.orange}
+
+label-volume = %percentage%%
+#label-volume-foreground = ${color.white}
+
+label-muted =  mute
+#label-muted-foreground = ${colors.gray}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+bar-volume-width = 5
+bar-volume-foreground-0 = ${colors.orange}
+bar-volume-foreground-1 = ${colors.orange}
+bar-volume-foreground-2 = ${colors.orange}
+bar-volume-foreground-3 = ${colors.orange}
+bar-volume-foreground-4 = ${colors.orange}
+bar-volume-foreground-5 = ${colors.orange}
+bar-volume-gradient = false
+bar-volume-indicator = 
+;bar-volume-indicator-font = 4
+bar-volume-indicator-foreground = ${colors.white}
+bar-volume-fill = 
+;bar-volume-fill-font = 4
+bar-volume-empty = 
+;bar-volume-empty-font = 4
+bar-volume-empty-foreground = ${colors.gray}
+
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ADP1
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+label-carging = %percentage%%
+format-charging-underline = ${colors.yellow}
+format-charging-padding = 1
+
+time-format = %H:%M
+label-discharging = %percentage%% - %time%
+format-discharging = <ramp-capacity> <label-discharging> 
+format-discharging-underline = ${colors.orange}
+format-discharging-padding = 1
+
+label-full = %percentage%%
+format-full = <ramp-capacity> <label-full>
+format-full-underline = ${self.format-charging-underline}
+format-full-overline = ${self.format-charging-underline}
+format-full-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-foreground = ${colors.foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 500
+
+
+; vim:ft=dosini

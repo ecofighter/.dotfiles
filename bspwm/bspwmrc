@@ -1,0 +1,22 @@
+#!/bin/bash
+
+sxhkd &
+feh --bg-scale .config/awesome/themes/copland/wallpaper.jpg
+polybar bar &
+compton -b --config ~/.config/compton/compton.conf
+qjackctl &
+redshift-gtk &
+albert &
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+bspc config border_width 2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a mpv state=floating
+bspc rule -a qjackctl state=floating
+bspc rule -a albert focus=on
+bspc rule -a scratch state=floating
