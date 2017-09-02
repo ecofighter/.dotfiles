@@ -1,6 +1,9 @@
 super + Return
   tilix
 
+super + shift + Return
+  xdotool search --class Tilix | head -n 1 | xargs wmctrl -i -a || tilix
+
 super + @space
   j4-dmenu-desktop
 
@@ -110,33 +113,43 @@ super + alt + {h,j,k,l}
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
+super + alt + {Up, Down}
+  bspc node -z {bottom_right 20 20, bottom_right -20 -20}
+
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # scratchpad
 super + z
-  tdrop -ma -w -4 -h 60% -w 100% -y 200 tilix
+  tdrop -ma -w -4 -h 60% -w 80% -y 200 -x 254 st
 
 # alsa vol key
-alt + Up
+XF86AudioRaiseVolume
   amixer -D pulse set Master 1%+
 
-alt + Down
+XF86AudioLowerVolume
   amixer -D pulse set Master 1%-
 
-alt + m
+XF86AudioMute
   amixer -D pulse set Master toggle
 
 # mpc key
-ctrl + alt + Up
+XF86AudioPlay
   mpc toggle
 
-ctrl + alt + Down
-  mpc stop
-
-ctrl + alt + Left
+XF86AudioPrev
   mpc prev
 
-ctrl + alt + Right
+XF86AudioNext
   mpc next
+
+# apps
+  # xdotool search --class Google-chrome-unstable windowactivate || google-chrome-unstable
+# chrome run or raise
+super + q
+  jumpapp google-chrome-unstable
+
+# thunderbird run or raise
+super + e
+  jumpapp thunderbird-bin

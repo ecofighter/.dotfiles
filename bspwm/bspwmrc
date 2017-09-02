@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sxhkd &
-feh --bg-scale .config/awesome/themes/copland/wallpaper.jpg
+feh --bg-scale $HOME/Pictures/Chicago_sunset.jpg
 polybar bar &
 compton -b --config ~/.config/compton/compton.conf
 qjackctl &
@@ -12,11 +12,19 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 bspc config border_width 2
 bspc config window_gap          12
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.5
 bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config gapless_monocle      false
 
+bspc config click_to_focus true
+bspc config honor_size_hints true
 bspc rule -a mpv state=floating
 bspc rule -a qjackctl state=floating
 bspc rule -a albert focus=on
 bspc rule -a scratch state=floating
+bspc rule -a llpp state=pseudo_tiled
+bspc rule -a Sxiv state=floating rectangle=2048x1152+256+144
+bspc rule -a MComix state=fullscreen
+bspc rule -a Google-chrome-unstable desktop=1 follow=on
+bspc rule -a Thunderbird desktop=1 follow=on
+# bspc rule -a Tilix desktop=2 focus=on

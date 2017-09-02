@@ -45,15 +45,15 @@ locale = ja-JP.UTF-8
 
 enable-ipc = true
 
-padding-left = 2
-padding-right = 2
+padding-left = 1
+padding-right = 1
 
-module-margin-right = 2
-module-margin-left = 2
+module-margin-right = 1
+module-margin-left = 1
 
-modules-right = mpd wlan cpu xbacklight volume battery date
-modules-center =
-modules-left = bspwm xwindow
+modules-right = mpd wlan xbacklight volume battery date
+modules-center = 
+modules-left = menu0 bspwm xwindow
 
 separator =
 
@@ -68,7 +68,7 @@ tray-detached = false
 tray-position = right
 tray-offset-x = 0
 tray-offset-y = 0
-;tray-maxsize = 16
+tray-maxsize = 16
 tray-padding = 1
 tray-transparent = false
 ; tray-background = #AF282828
@@ -92,6 +92,7 @@ label-maxlen = 30
 [module/cpu]
 type = internal/cpu
 format = <label> <ramp-coreload>
+format-underline = ${colors.orange}
 label =  CPU
 
 ramp-coreload-0 = ▁
@@ -108,8 +109,8 @@ type = internal/network
 interface = wlp1s0
 ; label-connected =  %essid% :  %upspeed%  %downspeed%
 label-connected =  %essid%
+label-connected-maxlen = 10
 format-connected-underline = ${colors.orange}
-format-disconected-underline = ${colors.orange}
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -141,19 +142,21 @@ type = custom/menu
 ;font = 3
 
 format = <label-toggle> <menu>
-format-underline = ${colors.orange}
+format-underline = ${colors.yellow}
 format-padding = 1
-;label-separator = |
+format-padding-right = 3
+label-separator = |
 
-menu-0-0 =  shutdown
+menu-0-0 =  shutdown
 menu-0-0-exec = systemctl poweroff
-menu-0-1 =  reboot
+menu-0-1 =  reboot
 menu-0-1-exec = systemctl reboot
-menu-0-2 =  logout
-menu-0-2-exec = bspc quit
-menu-0-3 =  suspend
-menu-0-3-exec = i3lock -i /home/davide/Immagini/rick_morty_lockscreen_laptop.png && systemctl suspend
-menu-0-4 =  cancel
+; menu-0-2 =  logout
+; menu-0-2-exec = bspc quit
+menu-0-2 =  suspend
+; menu-0-3-exec = i3lock -i /home/davide/Immagini/rick_morty_lockscreen_laptop.png && systemctl suspend
+menu-0-2-exec = systemctl suspend
+menu-0-3 =  cancel
 
 label-open =   
 label-close =
@@ -164,9 +167,11 @@ label-close =
 type = internal/mpd
 host = 127.0.0.1
 port = 6600
-format-online = <icon-prev>   <toggle>   <icon-next>  <bar-progress>  <label-song>
-format-online-underline = ${colors.orange}
-format-online-padding = 1
+format-online = <toggle>  <label-song>  <bar-progress>  <label-time>
+; format-playing-underline = ${colors.orange}
+; format-paused-underline = ${colors.yellow}
+; format-online-padding = 1
+label-song-maxlen = 40
 
 #label-song-font = 4
 label-song = %artist% - %title% 
@@ -176,7 +181,7 @@ icon-pause = 
 icon-prev = 
 icon-next = 
 
-bar-progress-width = 15
+bar-progress-width = 20
 bar-progress-indicator = |
 bar-progress-fill = ─
 bar-progress-empty = ─
@@ -300,6 +305,7 @@ master-mixer=Master
 format-volume = <ramp-volume> <label-volume> 
 
 format-volume-underline = ${colors.orange}
+format-muted-underline = ${colors.yellow}
 
 label-volume = %percentage%%
 #label-volume-foreground = ${color.white}
