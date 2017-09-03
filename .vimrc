@@ -1,4 +1,5 @@
 set encoding=utf-8
+set ambiwidth=single
 scriptencoding utf-8
 if &compatible
   set nocompatible
@@ -68,13 +69,13 @@ syntax on
 set showbreak=>
 set breakindent
 set breakindentopt=
-if has('nvim')
+" if has('nvim')
   set termguicolors
   set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
-else
-  let &t_SI = "\033[6 q"
-  let &t_EI = "\033[2 q"
-endif
+" else
+"   let &t_SI = "\033[6 q"
+"   let &t_EI = "\033[2 q"
+" endif
 
 " augroup indent_styles
 "   autocmd!
