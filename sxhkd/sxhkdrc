@@ -1,15 +1,19 @@
 super + Return
-  tilix
+  jumpapp tilix
 
 super + shift + Return
-  xdotool search --class Tilix | head -n 1 | xargs wmctrl -i -a || tilix
+  st
 
 super + @space
   j4-dmenu-desktop
 
-super + Esc
+super + Escape
   pkill -USR1 -x sxhkd
 
+
+# scratchpad
+super + z
+  tdrop -ma -h 90% -w 70% -y 100 -x 384 st
 
 #
 # bspwm hotkeys
@@ -120,10 +124,6 @@ super + alt + {Up, Down}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# scratchpad
-super + z
-  tdrop -ma -w -4 -h 60% -w 80% -y 200 -x 254 st
-
 # alsa vol key
 XF86AudioRaiseVolume
   amixer -D pulse set Master 1%+
@@ -145,10 +145,13 @@ XF86AudioNext
   mpc next
 
 # apps
-  # xdotool search --class Google-chrome-unstable windowactivate || google-chrome-unstable
+# ncmpcpp
+super + n
+  jumpapp -c ncmpcpp -f st -g 100x40 -c ncmpcpp -e ncmpcpp
+
 # chrome run or raise
 super + q
-  jumpapp google-chrome-unstable
+  jumpapp google-chrome-beta
 
 # thunderbird run or raise
 super + e
