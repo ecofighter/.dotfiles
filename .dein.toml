@@ -59,6 +59,13 @@ hook_add = '''
 [[plugins]]
 repo = 'tyru/caw.vim'
 
+[[plugins]]
+repo = 'terryma/vim-expand-region'
+hook_add = '''
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+'''
+
 # [[plugins]]
 # repo = 'kristijanhusak/vim-hybrid-material'
 #
