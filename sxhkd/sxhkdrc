@@ -151,7 +151,7 @@ super + n
 
 # chrome run or raise
 super + q
-  jumpapp google-chrome-beta
+  jumpapp -c google-chrome google-chrome-stable
 
 # thunderbird run or raise
 super + e
