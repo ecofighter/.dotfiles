@@ -15,13 +15,6 @@ if [[ $- != *i* ]] ; then
 fi
 
 # Put your fun stuff here.
-export GOPATH="$HOME/.go"
-export PATH="$HOME/.roswell/bin:$HOME/.cargo/bin:$HOME/.local/bin:$GOPATH/bin:$PATH"
-export RUST_SRC_PATH="$HOME/.rust_src/src"
-export TERM=xterm-256color
-export COLORTERM=24bit
-export XDG_CONFIG_HOME=$HOME/.config
-export PGDATA=/var/lib/postgresql/9.5/data
 
 if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
