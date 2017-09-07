@@ -85,7 +85,7 @@ set breakindentopt=
 "   autocmd Filetype cpp setlocal fo-=ro fo+=cql cindent 
 " augroup END
 
-inoremap jj <ESC>
+inoremap fd <ESC>
 
 nnoremap [caw] <Nop>
 vnoremap [caw] <Nop>
