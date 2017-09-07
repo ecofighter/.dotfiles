@@ -7,6 +7,8 @@ compton -b --config ~/.config/compton/compton.conf
 qjackctl &
 redshift-gtk &
 albert &
+export _JAVA_AWT_WM_NONREPARENTING=1
+xmodmap -e 'remove mod4 = Hyper_L'; xmodmap -e 'keycode 65 = Hyper_L'; xmodmap -e 'add shift = Hyper_L'; xmodmap -e 'keycode 255 = space'; xcape -e 'Hyper_L=space'
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 bspc desktop 1 -l monocle
@@ -15,10 +17,10 @@ bspc config window_gap          12
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
-bspc config gapless_monocle      false
+bspc config gapless_monocle      true
 
 bspc config click_to_focus true
-bspc config honor_size_hints true
+bspc config honor_size_hints false
 bspc rule -a mpv state=floating
 bspc rule -a qjackctl state=floating
 bspc rule -a albert focus=on
@@ -31,3 +33,4 @@ bspc rule -a Thunderbird desktop=1 follow=on
 bspc rule -a Tilix desktop=2 follow=on
 bspc rule -a nvim-qt state=fullscreen
 bspc rule -a ncmpcpp state=floating flag sticky=on
+bspc rule -a calibre:calibre-ebook-viewer state=floating
