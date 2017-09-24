@@ -7,8 +7,9 @@ compton -b --config ~/.config/compton/compton.conf
 qjackctl &
 redshift-gtk &
 albert &
+xautolock -locker "systemctl suspend" -time 5 -detectsleep &
 export _JAVA_AWT_WM_NONREPARENTING=1
-xmodmap -e 'remove mod4 = Hyper_L'; xmodmap -e 'keycode 65 = Hyper_L'; xmodmap -e 'add shift = Hyper_L'; xmodmap -e 'keycode 255 = space'; xcape -e 'Hyper_L=space'
+xmodmap -e 'remove mod4 = Hyper_L'; xmodmap -e 'keycode 65 = Hyper_L Hyper_L Hyper_L Hyper_L'; xmodmap -e 'add shift = Hyper_L'; xmodmap -e 'keycode 255 = space'; xcape -e 'Hyper_L=space'
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 bspc desktop 1 -l monocle
@@ -31,6 +32,7 @@ bspc rule -a MComix state=fullscreen
 bspc rule -a Google-chrome desktop=1 follow=on
 bspc rule -a Thunderbird desktop=1 follow=on
 bspc rule -a Tilix desktop=2 follow=on
+bspc rule -a Emacs desktop=3 follow=on
 bspc rule -a nvim-qt state=fullscreen
 bspc rule -a ncmpcpp state=floating flag sticky=on
 bspc rule -a calibre:calibre-ebook-viewer state=floating

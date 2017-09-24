@@ -29,36 +29,38 @@ values."
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
-   dotspacemacs-configuration-layers '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     helm
-     auto-completion
-     better-defaults
-     emacs-lisp
-     ;; git
-     ;; markdown
-     org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     spell-checking
-     syntax-checking
-     ;; version-control
-     ;; (themes-megapack :pacages
-     ;;                  ample-theme)
-     (shell :variables shell-default-shell 'eshell )
-     common-lisp
-     (haskell :variables haskell-completion-backend 'intero haskell-enable-hindent-style "johan-tibell")
-     )
+   dotspacemacs-configuration-layers '(yaml
+                                       ;; ----------------------------------------------------------------
+                                       ;; Example of useful layers you may want to use right away.
+                                       ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
+                                       ;; <M-m f e R> (Emacs style) to install them.
+                                       ;; ----------------------------------------------------------------
+                                       helm
+                                       auto-completion
+                                       better-defaults
+                                       emacs-lisp
+                                       git
+                                       ;; markdown
+                                       org
+                                       ;; (shell :variables
+                                       ;;        shell-default-height 30
+                                       ;;        shell-default-position 'bottom)
+                                       (spell-checking :variables spell-checking-enable-by-default nil)
+                                       syntax-checking
+                                       ;; version-control
+                                       ;; (themes-megapack :pacages
+                                       ;;                  ample-theme)
+                                       (shell :variables shell-default-shell 'eshell )
+                                       common-lisp
+                                       rust
+                                       (haskell :variables haskell-completion-backend 'intero haskell-enable-hindent-style "johan-tibell")
+                                       (c-c++ :variables c-c++-enable-clang-support t)
+                                       )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(ddskk)
+   dotspacemacs-additional-packages '(ddskk mmm-mode bison-mode)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -138,7 +140,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Myrica M for Powerline"
-                               :size 32
+                               :size 14.0
                                :weight normal
                                :width normal
                                :powerline-scale 1.2)
@@ -306,7 +308,8 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (with-eval-after-load 'exec-path-from-shell
-    (setq exec-path-from-shell-arguments '("--norc"))))
+    (setq exec-path-from-shell-arguments '("--norc")))
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -315,24 +318,75 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ;(setq split-height-threshold nil)
-  ;(setq split-width-threshold 0)
-  ;(add-hook 'haskell-mode-hook '(lambda () (setq evil-auto-indent nil)))
-  (setq tab-width 2)
+                                        ;(setq split-height-threshold nil)
+                                        ;(setq split-width-threshold 0)
+                                        ;(add-hook 'haskell-mode-hook '(lambda () (setq evil-auto-indent nil)))
+  (load-file "~/.spacemacs.d/happy-mode/happy-mode-autoload.elc")
+  (load-file "~/.spacemacs.d/happy-mode/happy-mode.elc")
+  (require 'happy-mode)
+
+  (global-company-mode)
   (setq indent-tabs-mode nil)
+  (setq-default tab-width 2)
+  (defvaralias 'c-basic-offset 'tab-width)
+  (defvaralias 'cperl-indent-level 'tab-width)
+  (defvaralias 'sh-basic-offset 'tab-width)
+  (defvaralias 'sh-indentation 'tab-width)
+  (defvaralias 'rust-indent-offset 'tab-width)
+  ;; 70 colums for wrapping
+  (setq-default fill-column 80)
+  ;; Hard-wrap at 80 columns on for _everything_
+  (setq-default auto-fill-function 'do-auto-fill)
+
+  ;; Soft-wrap (visual wrap) always for long lines that don't fit on the screen
+  ;; (global-visual-line-mode 1)
+
   (when (require 'skk nil t)
     (global-set-key (kbd "C-x j") 'skk-auto-fill-mode)
     (define-key evil-insert-state-map (kbd "C-S-j") 'newline-and-indent)
     (setq default-input-method "japanese-skk")
+    (setq skk-jisyo-code 'euc-jp)
+    (setq skk-jisyo (concat (getenv "HOME") "/.config/ibus-skk/user.dict"))
     (require 'skk-study)
-    (setq skk-status-indicator 'minor-mode)
-    (setq skk-preload t))
-  (setq inferior-lisp-program "ros -Q run")
-  (setf slime-lisp-implementations
-        `((sbcl    ("sbcl" "--dynamic-space-size" "2000"))
-          (roswell ("ros" "-Q" "run"))))
-  (setf slime-default-lisp 'roswell)
-  (global-company-mode)
+    (require 'skk-hint)
+    (require 'context-skk))
+  (setq skk-status-indicator 'minor-mode)
+  (setq skk-preload t)
+  (setq ispell-dictionary "en_US")
+
+  ;; slime-setting
+  (load (expand-file-name "~/.roswell/helper.el"))
+                                        ; (setq inferior-lisp-program "ros -Q run")
+                                        ; (setf slime-lisp-implementations
+                                        ;       `((sbcl    ("sbcl" "--dynamic-space-size" "2000"))
+                                        ;         (roswell ("ros" "-Q" "run"))))
+                                        ; (setf slime-default-lisp 'roswell)
+  (defun slime-qlot-exec (directory)
+    (interactive (list (read-directory-name "Project directory: ")))
+    (slime-start :program "qlot"
+                 :program-args '("exec" "ros" "-S" "." "run")
+                 :directory directory
+                 :name 'qlot
+                 :env (list (concat "PATH="
+                                    (mapconcat 'identity exec-path ":"))
+                            (concat "QUICKLISP_HOME="
+                                    (file-name-as-directory directory) "quicklisp/"))))
+
+
+  (defun haskell-evil-open-above ()
+    (interactive)
+    (evil-digit-argument-or-evil-beginning-of-line)
+    (haskell-indentation-newline-and-indent)
+    (evil-previous-line)
+    (haskell-indentation-indent-line)
+    (evil-append-line nil))
+  (defun haskell-evil-open-below ()
+    (interactive)
+    (evil-append-line nil)
+    (haskell-indentation-newline-and-indent))
+  (evil-define-key 'normal haskell-mode-map
+    "o" 'haskell-evil-open-below
+    "O" 'haskell-evil-open-above)
   (defun haskell-indentation-advice ()
     (when (and (< 1 (line-number-at-pos))
                (save-excursion
@@ -364,18 +418,19 @@ you should place your code here."
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (fcitx org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-download org-brain htmlize gruvbox-theme autothemer gnuplot flyspell-correct-helm flyspell-correct evil-org auto-dictionary unfill mwim flycheck-pos-tip pos-tip flycheck-haskell symon string-inflection password-generator helm-purpose window-purpose imenu-list evil-lion editorconfig dante xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help slime-company slime intero flycheck hlint-refactor hindent helm-hoogle helm-company helm-c-yasnippet haskell-snippets fuzzy ddskk cdb ccc company-statistics company-ghci company-ghc ghc haskell-mode company-cabal company common-lisp-snippets cmm-mode auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(package-selected-packages
+     (quote
+      (org-brain gruvbox-theme evil-org editorconfig iedit smartparens goto-chg window-purpose helm helm-core projectile async rust-mode mmm-mode realgud test-simple loc-changes load-relative disaster company-c-headers cmake-mode cmake-ide levenshtein clang-format bison-mode smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit with-editor yaml-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help slime-company slime intero flycheck hlint-refactor hindent helm-hoogle helm-company helm-c-yasnippet haskell-snippets fuzzy ddskk cdb ccc company-statistics company-ghci company-ghc ghc haskell-mode company-cabal company common-lisp-snippets cmm-mode auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+   '(safe-local-variable-values (quote ((intero-targets "fdb:exe:Adjacent" "fdb:exe:fdb")))))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  )

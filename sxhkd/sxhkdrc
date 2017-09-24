@@ -147,12 +147,16 @@ XF86AudioNext
 # apps
 # ncmpcpp
 super + n
-  jumpapp -c ncmpcpp -f st -g 100x40 -c ncmpcpp -e ncmpcpp
+  jumpapp -c ncmpcpp -f -i "st -g 100x40 -c ncmpcpp -e ncmpcpp" st -g 100x40 -c ncmpcpp -e ncmpcpp
 
 # chrome run or raise
 super + q
   jumpapp -c google-chrome google-chrome-stable
 
 # thunderbird run or raise
-super + e
+super + v
   jumpapp thunderbird-bin
+
+# emacs run or raise
+super + e
+  jumpapp emacs
