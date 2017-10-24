@@ -51,7 +51,7 @@ padding-right = 1
 module-margin-right = 1
 module-margin-left = 1
 
-modules-right = mpd wlan cpu memory xbacklight volume battery date
+modules-right = wlan cpu memory xbacklight volume battery date
 ; modules-center = 
 modules-left = menu0 bspwm xwindow
 

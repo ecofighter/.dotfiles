@@ -11,7 +11,7 @@ export XDG_RUNTIME_DIR=/run/user/1000
 export XDG_CONFIG_DIR=~/.config
 eval "$(dbus-launch --sh-syntax --exit-with-session)"
 #ibus-daemon -xrd
-uim-xim &
+uim-xim --async &
 uim-toolbar-gtk3-systray &
 xmodmap ~/.Xmodmap
 #xmodmap -e 'keycode 255 = space'; xmodmap -e 'keycode 65 = Shift_L'; xcape -e '#65=space' 

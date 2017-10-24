@@ -144,6 +144,12 @@ XF86AudioPrev
 XF86AudioNext
   mpc next
 
+Print
+  scrot
+
+alt + Print
+  scrot -s
+
 # apps
 # ncmpcpp
 super + n
@@ -160,3 +166,6 @@ super + v
 # emacs run or raise
 super + e
   jumpapp emacs
+
+super + a
+  rofi -show drun

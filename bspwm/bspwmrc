@@ -2,14 +2,14 @@
 
 sxhkd &
 feh --bg-scale $HOME/Pictures/Chicago_sunset.jpg
-polybar bar &
 compton -b --config ~/.config/compton/compton.conf
 qjackctl &
 redshift-gtk &
-albert &
+#albert &
 xautolock -locker "systemctl suspend" -time 5 -detectsleep &
 export _JAVA_AWT_WM_NONREPARENTING=1
 xmodmap -e 'remove mod4 = Hyper_L'; xmodmap -e 'keycode 65 = Hyper_L Hyper_L Hyper_L Hyper_L'; xmodmap -e 'add shift = Hyper_L'; xmodmap -e 'keycode 255 = space'; xcape -e 'Hyper_L=space'
+polybar bar &
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 bspc desktop 1 -l monocle
@@ -27,6 +27,7 @@ bspc rule -a qjackctl state=floating
 bspc rule -a albert focus=on
 bspc rule -a scratch state=floating
 bspc rule -a llpp state=pseudo_tiled
+bspc rule -a Zathura state=tiled
 bspc rule -a Sxiv state=floating rectangle=2048x1152+256+144
 bspc rule -a MComix state=fullscreen
 bspc rule -a Google-chrome desktop=1 follow=on
