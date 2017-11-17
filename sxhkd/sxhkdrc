@@ -111,11 +111,11 @@ super + ctrl + shift + space
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+	bspc node -z {left -40 0,bottom 0 40,top 0 -40,right 40 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+	bspc node -z {right -40 0,top 0 40,bottom 0 -40,left 40 0}
 
 super + alt + {Up, Down}
   bspc node -z {bottom_right 20 20, bottom_right -20 -20}
@@ -124,12 +124,18 @@ super + alt + {Up, Down}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+XF86MonBrightnessUp
+  xbacklight -inc 5
+
+XF86MonBrightnessDown
+  xbacklight -dec 5
+
 # alsa vol key
 XF86AudioRaiseVolume
-  amixer -D pulse set Master 1%+
+  amixer -D pulse set Master 4%+
 
 XF86AudioLowerVolume
-  amixer -D pulse set Master 1%-
+  amixer -D pulse set Master 4%-
 
 XF86AudioMute
   amixer -D pulse set Master toggle
@@ -157,7 +163,7 @@ super + n
 
 # chrome run or raise
 super + q
-  jumpapp -c google-chrome google-chrome-stable
+  jumpapp -c firefox firefox
 
 # thunderbird run or raise
 super + v
@@ -168,4 +174,4 @@ super + e
   jumpapp emacs
 
 super + a
-  rofi -show drun
+  rofi -show drun -modi drun,run -threads 4 -hide-scrollbar -sidebar-mode

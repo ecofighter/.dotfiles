@@ -8,6 +8,12 @@ export XDG_RUNTIME_DIR=/run/user/1000
 export XDG_CONFIG_DIR=~/.config
 eval "$(dbus-launch --sh-syntax --exit-with-session)"
 uim-xim --async &
-uim-toolbar-gtk3-systray &
+#uim-toolbar-gtk-systray &
+nm-applet &
 xmodmap ~/.Xmodmap
+feh --bg-scale $HOME/Pictures/wallpaper.jpg
+compton -b --config ~/.config/compton/compton.conf
+redshift &
+#redshift-gtk &
+xmodmap -e 'remove mod4 = Hyper_L'; xmodmap -e 'keycode 65 = Hyper_L Hyper_L Hyper_L Hyper_L'; xmodmap -e 'add shift = Hyper_L'; xmodmap -e 'keycode 255 = space'; xcape -e 'Hyper_L=space'
 #xmodmap -e 'keycode 255 = space'; xmodmap -e 'keycode 65 = Shift_L'; xcape -e '#65=space' 

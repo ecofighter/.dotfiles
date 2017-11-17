@@ -28,9 +28,60 @@ secondary = #FF6200
 alert = #bd2c40
 
 
+[bar/i3bar]
+monitor = eDP-1
+bottom = false
+override-redirect = true
+wm-restack = i3
+width = 100%
+height = 32
+offset-x = 0
+offset-y = 0
+
+locale = ja_JP.UTF-8
 
 
-[bar/bar]
+enable-ipc = true
+
+padding-left = 1
+padding-right = 1
+
+module-margin-right = 1
+module-margin-left = 1
+
+modules-right = cpu memory backlight volume battery date
+; modules-center = wlan
+modules-left = i3 xwindow
+
+separator =
+
+; background = ${colors.background}
+background = #282828
+foreground = ${colors.foreground}
+
+underline-size = 2
+underline-color = ${colors.white}
+
+tray-detached = false
+tray-position = right
+tray-offset-x = 0
+tray-offset-y = 0
+tray-maxsize = 16
+tray-padding = 1
+tray-transparent = false
+; tray-background = #AF282828
+tray-scale = 0.5
+
+;font-0 = "Liberation Sans:size=9;0"
+font-0 = "Koruri:size=12;0"
+;font-0 = "Hack:size=8;0"
+font-1 = "FontAwesome:size=12;0"
+font-2 = "Cousine:size=12;0"
+font-3 = "Artwiz Lemon:size=12;0"
+font-4 = "Roboto:size=6;0"
+
+
+[bar/bspwm]
 monitor = eDP-1
 bottom = false
 wm-restack = bspwm
@@ -51,9 +102,9 @@ padding-right = 1
 module-margin-right = 1
 module-margin-left = 1
 
-modules-right = wlan cpu memory xbacklight volume battery date
-; modules-center = 
-modules-left = menu0 bspwm xwindow
+modules-right = cpu memory xbacklight volume battery date
+; modules-center = wlan
+modules-left = bspwm xwindow
 
 separator =
 
@@ -75,12 +126,12 @@ tray-transparent = false
 tray-scale = 1.0
 
 ;font-0 = "Liberation Sans:size=9;0"
-font-0 = "Koruri:size=14;0"
+font-0 = "Koruri:size=12;0"
 ;font-0 = "Hack:size=8;0"
-font-1 = "FontAwesome:size=14;0"
-font-2 = "Cousine:size=14;0"
-font-3 = "Artwiz Lemon:size=14;0"
-font-4 = "Roboto:size=7;0"
+font-1 = "FontAwesome:size=12;0"
+font-2 = "Cousine:size=12;0"
+font-3 = "Artwiz Lemon:size=12;0"
+font-4 = "Roboto:size=6;0"
 
 [module/xwindow]
 label-font = 0
@@ -125,8 +176,19 @@ label-connected =  %essid%
 label-connected-maxlen = 10
 format-connected-underline = ${colors.orange}
 
+[module/wifi]
+type = custom/script
+interval = 60
+; exec = "SSID=$(wpa_cli -i wlp2s0 status | grep -e '^ssid' | sed 's/ssid=//'); echo ${SSID:-no network}"
+exec = "SSID=$( nmcli d show wlp2s0 | grep -e "GENERAL.接続" | awk '{print $2}' ); echo ${SSID:-no network}"
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.orange}
+
 [module/xbacklight]
 type = internal/xbacklight
+enable-scroll=true
+output = eDP1
 
 format =  <label>
 label = %percentage%%
@@ -148,7 +210,9 @@ bar-empty-foreground = ${colors.foreground-alt}
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
-enable-scroll=true
+enable-scroll = false
+scroll-up = xbacklight -inc 5
+scroll-down = xbacklight -dec 5
 
 [module/menu0]
 type = custom/menu
@@ -302,7 +366,7 @@ bar-empty-foreground = #55
 type = internal/date
 #date-alt =   %A %H:%M 
 ; date =  %A %d %b  %H:%M
-date =  %A %m %d  %H:%M
+date =  %a %m/%d  %H:%M
 interval = 5
 format-underline = ${colors.orange}
 ;format-background = ${colors.black}
@@ -313,8 +377,8 @@ format-padding = 1
 [module/volume]
 type = internal/volume
 
-master-soundcard=pulse
-master-mixer=Master
+master-soundcard = default
+master-mixer = Master
 format-volume = <ramp-volume> <label-volume> 
 
 format-volume-underline = ${colors.orange}
@@ -385,5 +449,14 @@ animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 500
 
+[module/pavolume]
+type = custom/script
+interval = 2
+label = %output%
+exec = ~/.config/polybar/pavolume.sh
+click-right = exec pavucontrol
+click-left = ~/.config/polybar/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/pavolume.sh --up
+scroll-down = ~/.config/polybar/pavolume.sh --down
 
 ; vim:ft=dosini
