@@ -49,3 +49,6 @@ set -g faded_blue "#076678"
 set -g faded_purple "#8F3F71"
 set -g faded_aqua "#427B58"
 set -g faded_orange "#AF3A03"
+
+# OPAM configuration
+source /home/haneta/.opam/opam-init/init.fish > /dev/null 2> /dev/null or true
