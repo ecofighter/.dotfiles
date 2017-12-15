@@ -9,7 +9,8 @@ export XDG_CONFIG_DIR=~/.config
 eval "$(dbus-launch --sh-syntax --exit-with-session)"
 uim-xim --async &
 #uim-toolbar-gtk-systray &
-nm-applet &
+unclutter -b
+#nm-applet &
 xmodmap ~/.Xmodmap
 feh --bg-scale $HOME/Pictures/wallpaper.jpg
 compton -b --config ~/.config/compton/compton.conf

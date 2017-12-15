@@ -29,17 +29,16 @@ alert = #bd2c40
 
 
 [bar/i3bar]
-monitor = eDP-1
+monitor = eDP1
 bottom = false
-override-redirect = true
-wm-restack = i3
+override-redirect = false
+wm-restack =
 width = 100%
 height = 32
 offset-x = 0
 offset-y = 0
 
 locale = ja_JP.UTF-8
-
 
 enable-ipc = true
 
@@ -49,9 +48,11 @@ padding-right = 1
 module-margin-right = 1
 module-margin-left = 1
 
-modules-right = cpu memory backlight volume battery date
+modules-right = wifi cpu memory xbacklight volume battery date
 ; modules-center = wlan
 modules-left = i3 xwindow
+
+fixed-center = true
 
 separator =
 
@@ -63,14 +64,14 @@ underline-size = 2
 underline-color = ${colors.white}
 
 tray-detached = false
-tray-position = right
+tray-position = 
 tray-offset-x = 0
 tray-offset-y = 0
-tray-maxsize = 16
+tray-maxsize = 32
 tray-padding = 1
 tray-transparent = false
 ; tray-background = #AF282828
-tray-scale = 0.5
+tray-scale = 1
 
 ;font-0 = "Liberation Sans:size=9;0"
 font-0 = "Koruri:size=12;0"
@@ -82,7 +83,7 @@ font-4 = "Roboto:size=6;0"
 
 
 [bar/bspwm]
-monitor = eDP-1
+monitor = eDP1
 bottom = false
 wm-restack = bspwm
 width = 100%
@@ -180,7 +181,7 @@ format-connected-underline = ${colors.orange}
 type = custom/script
 interval = 60
 ; exec = "SSID=$(wpa_cli -i wlp2s0 status | grep -e '^ssid' | sed 's/ssid=//'); echo ${SSID:-no network}"
-exec = "SSID=$( nmcli d show wlp2s0 | grep -e "GENERAL.接続" | awk '{print $2}' ); echo ${SSID:-no network}"
+exec = "SSID=$(nmcli c show --active | awk 'NR==2{print $1}'); echo ${SSID:-no network}"
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.orange}
@@ -314,24 +315,25 @@ ws-icon-9 = 10;
 type = internal/bspwm
 format = <label-state> <label-mode>
 
-label-focused = %icon%
+label-focused = %name%
 ;label-focused-font = 1
 label-focused-background = ${colors.background-alt}
 ;label-focused-underline= ${colors.primary}
 label-focused-underline= ${colors.orange}
-label-focused-padding = 1
+label-focused-padding = 2
 
-label-occupied = %icon%
-label-occupied-padding = 1
+label-occupied = %name%
+label-occupied-padding = 2
 
-label-urgent = %icon%!
+label-urgent = %name%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
+label-urgent-padding = 2
 
-label-empty = %icon%
+label-empty = %name%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 1
+label-empty-padding = 2
 
+ws-label-padding-9 = 1
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
@@ -377,7 +379,7 @@ format-padding = 1
 [module/volume]
 type = internal/volume
 
-master-soundcard = default
+master-soundcard = pulse
 master-mixer = Master
 format-volume = <ramp-volume> <label-volume> 
 

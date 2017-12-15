@@ -5,7 +5,7 @@ sxhkd &
 xautolock -locker "systemctl suspend" -time 5 -detectsleep &
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 10
 #bspc desktop 1 -l monocle
 bspc config border_width 2
 bspc config window_gap          12
@@ -29,7 +29,7 @@ bspc rule -a Google-chrome desktop=1 follow=on
 bspc rule -a Firefox desktop=1 follow=on
 bspc rule -a Thunderbird desktop=1 follow=on
 bspc rule -a Tilix desktop=2 follow=on
-bspc rule -a Emacs desktop=3 follow=on
+bspc rule -a Emacs desktop=3 follow=on state=tiled
 bspc rule -a nvim-qt state=fullscreen
 bspc rule -a ncmpcpp state=floating flag sticky=on
 bspc rule -a calibre:calibre-ebook-viewer state=floating

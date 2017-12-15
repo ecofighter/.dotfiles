@@ -1,4 +1,4 @@
-Xft.dpi:	132
+Xft.dpi:	140
 Xft.autohint:	0
 Xft.lcdfilter:	lcddefault
 Xft.hintstyle:	hintfull
@@ -71,6 +71,7 @@ URxvt*fadeColor:  rgba:0000/0000/0000/dddd
 
 URxvt.background: rgba:0029/0031/0033/cccc
 URxvt.foreground: t_foreground
+URxvt*url-launcher:  google-chrome-stable
 ! ! black
 ! *color0: t_current_line
 ! *color8: t_selection
@@ -95,4 +96,19 @@ URxvt.foreground: t_foreground
 ! ! white
 ! *color7: t_comment
 ! *color15: t_foreground
-! URxvt*url-launcher:  google-chrome-stable
+!
+!
+rofi.kb-mode-next: Shift+Right,Control+i,Control+Tab
+rofi.kb-mode-previous: Shift+Left,Control+I
+! Enable the extended coloring options
+rofi.color-enabled: true
+
+!                  bg       border   separator
+rofi.color-window: #32302f, #a89984, #a89984
+
+!                  bg       fg       bg-alt   hl-bg    hl-fg
+rofi.color-normal: #32302f, #ebdbb2, #3c3836, #665c54, #fbf1c7
+rofi.color-active: #d79921, #32302f, #d79921, #fabd2f, #32302f
+rofi.color-urgent: #cc241d, #32302f, #cc241d, #fb4934, #32302f
+
+rofi.font:             Koruri bold 16

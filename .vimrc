@@ -86,6 +86,14 @@ set breakindentopt=
 " augroup END
 
 inoremap fd <ESC>
+nnoremap j gj
+nnoremap gj j
+nnoremap k gk
+nnoremap gk k
+imap <C-p> <Up>
+imap <C-n> <Down>
+imap <C-b> <Left>
+imap <C-f> <Right>
 
 nnoremap [caw] <Nop>
 vnoremap [caw] <Nop>
@@ -113,6 +121,7 @@ if has('nvim')
   tnoremap <silent> <ESC> <C-\><C-n>
   nnoremap <silent>[neoterm]  :<C-u>Ttoggle<CR>
 endif
+
 " ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
 let s:opam_share_dir = system("opam config var share")
 let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')

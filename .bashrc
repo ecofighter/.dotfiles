@@ -21,6 +21,6 @@ fi
 # fi
 
 if [[ $- = *i*  ]]; then
-   eval `opam config env`
+   # eval `opam config env`
    exec fish
 fi

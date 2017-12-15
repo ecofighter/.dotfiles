@@ -46,6 +46,8 @@ hook_add = """
   \}
   nmap <silent> <C-n> <Plug>(ale_next_wrap)
   nmap <silent> <C-n> <Plug>(ale_previous_wrap)
+  call ale#Set('cpp_gcc_options', '-std=c++17 -Wall')
+  call ale#Set('cpp_clang_options', '-std=c++17 -Wall')
 """
 
 [[plugins]]

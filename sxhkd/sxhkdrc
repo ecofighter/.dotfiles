@@ -24,7 +24,7 @@ super + alt + Escape
 	bspc quit
 
 # close and kill
-super + {_,shift + }w
+super + {_,shift + }q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
@@ -162,16 +162,21 @@ super + n
   jumpapp -c ncmpcpp -f -i "st -g 100x40 -c ncmpcpp -e ncmpcpp" st -g 100x40 -c ncmpcpp -e ncmpcpp
 
 # chrome run or raise
-super + q
+super + w
   jumpapp -c firefox firefox
 
 # thunderbird run or raise
 super + v
-  jumpapp thunderbird-bin
+  jumpapp thunderbird
 
 # emacs run or raise
 super + e
-  jumpapp emacs
+  jumpapp -c emacs emacsclient --create-frame
 
 super + a
-  rofi -show drun -modi drun,run -threads 4 -hide-scrollbar -sidebar-mode
+  rofi -show drun -modi drun,run,window -threads 4 -hide-scrollbar -sidebar-mode
+
+super + @F1
+  bspc monitor -f next
+super + @F2
+  bspc node -m next

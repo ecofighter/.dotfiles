@@ -33,8 +33,12 @@ values."
                                        coq
                                        markdown
                                        yaml
-                                       helm
-                                       auto-completion
+                                       ivy
+                                       (auto-completion :variables
+                                                        auto-completion-return-key-behavior 'complete
+                                                        auto-completion-tab-key-behavior 'cycle
+                                                        auto-completion-complete-with-key-sequence "jk"
+                                                        auto-completion-complete-with-key-sequence-delay 0.1)
                                        better-defaults
                                        emacs-lisp
                                        git
@@ -42,18 +46,25 @@ values."
                                        ;; (shell :variables
                                        ;;        shell-default-height 30
                                        ;;        shell-default-position 'bottom)
-                                       (spell-checking :variables spell-checking-enable-by-default nil)
+                                       ;;(spell-checking :variables spell-checking-enable-by-default nil)
                                        syntax-checking
                                        ;; version-control
                                        ;; (themes-megapack :pacages
                                        ;;                  ample-theme)
-                                       (shell :variables shell-default-shell 'eshell )
+                                       (shell :variables
+                                              shell-default-shell 'eshell
+                                              shell-default-term-shell 'zsh)
                                        latex
                                        common-lisp
                                        rust
                                        (haskell :variables haskell-completion-backend 'intero haskell-enable-hindent-style "johan-tibell")
                                        ocaml
-                                       (c-c++ :variables c-c++-enable-clang-support t)
+                                       semantic
+                                       (c-c++ :variables
+                                              c-c++-enable-clang-support t
+                                              c-c++-enable-clang-format-on-save nil)
+                                       rtags
+                                       irony-mode
                                        ess)
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -139,7 +150,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Cica"
-                               :size 13.0
+                               :size 12.0
                                :weight normal
                                :width normal
                                :powerline-scale 1.2)
@@ -306,9 +317,8 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (setq evil-want-abbrev-expand-on-insert-exit nil)
-  (with-eval-after-load 'exec-path-from-shell
-    (setq exec-path-from-shell-arguments '("--norc"))))
+  (setq-default evil-want-abbrev-expand-on-insert-exit nil)
+  (setq-default exec-path-from-shell-arguments '("-i")))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -345,7 +355,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
                    ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
   (setq indent-tabs-mode nil)
-  (setq-default tab-width 4)
+  (setq-default tab-width 2)
   (defvaralias 'c-basic-offset 'tab-width)
   (defvaralias 'cperl-indent-level 'tab-width)
   (defvaralias 'sh-basic-offset 'tab-width)
@@ -362,39 +372,50 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (global-visual-line-mode 1)
   (setq-default visual-line-fringe-indicators t)
 
-  (global-company-mode)
+  (add-hook 'after-init-hook 'global-company-mode)
   (define-key evil-insert-state-map (kbd "C-h") 'backward-delete-char)
-  ;; (require 'skk)
-  ;; (setq-default skk-preload t)
-  ;; (global-set-key (kbd "C-x j") 'skk-auto-fill-mode)
-  ;; (define-key evil-insert-state-map (kbd "C-S-j") 'newline-and-indent)
-  ;; (setq default-input-method "japanese-skk")
-  ;; (setq skk-jisyo-code 'euc-jp)
-  ;; (setq skk-jisyo (concat (getenv "HOME") "/.skk-jisyo"))
-  ;; (setq skk-large-jisyo "/usr/share/skk/SKK-JISYO.L")
-  ;; (setq-default skk-kutouten-type 'en)
-  ;; (setq skk-use-azik t)
-  ;; (setq skk-azik-keyboard-type 'jp106)
-  ;; (setq skk-status-indicator 'minor-mode)
-  ;; (require 'skk-study)
-  ;; (require 'skk-hint)
-  ;; (add-to-list 'context-skk-programming-mode 'haskell-mode)
-  ;; (setq skk-show-annotation t)      ; Annotation
 
   (require 'uim-leim)
-  (setq default-input-method "japanese-skk-uim")
-  (setq uim-candidate-display-inline t)
+  (setq-default default-input-method "japanese-skk-uim")
+  (set-input-method "japanese-skk-uim")
+  (setq-default uim-candidate-display-inline t)
 
 
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
   (setq-default TeX-engine 'luatex)
   (setq-default TeX-PDF-mode t)
-  (setq preview-gs-command-line "rungs")
-  (setq TeX-view-program-selection '((output-pdf "Zathura")))
+  (setq-default preview-gs-command-line "rungs")
+  (setq-default TeX-view-program-selection '((output-pdf "Zathura")))
 
   (toggle-input-method)
-  (setq ispell-dictionary "en_US")
+  (setq-default ispell-dictionary "en_US")
 
+  ;; (defun set-company-mode-options ()
+  ;;   (define-key evil-insert-state-map (kbd "jk") 'company-complete))
+  ;; (add-hook 'company-mode-hook #'set-company-mode-options)
+  (setq-default cmake-ide-build-dir "build")
+  ;; (setq-default cmake-ide-cmake-opts "-DCMAKE_BUILD_TYPE=Release -G Ninja")
+  (setq-default cmake-ide-cmake-opts "-DCMAKE_BUILD_TYPE=Debug -G Ninja")
+  (setq-default company-clang-arguments '("-stdlib=libstdc++"))
+  ;; (setq-default irony-additional-clang-options "-std=c++14")
+  (setq-default flycheck-clang-standard-library "libc++")
+  (setq-default flycheck-clang-language-standard "c++14")
+  (setq-default flycheck-clang-include-path '("/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include"))
+  (evil-leader/set-key-for-mode 'c++-mode "=" 'clang-format-buffer)
+  (evil-leader/set-key-for-mode 'c-mode "=" 'clang-format-buffer)
+  (defun set-c++-mode-options ()
+    (flycheck-select-checker 'rtags)
+    (spacemacs|add-company-backends :backend company-semantic :modes '(c-mode
+                                                                       c++-mode
+                                                                       cmake-mode
+                                                                       c-mode-common))
+    (spacemacs|add-company-backends :backend company-rtags :modes '(c-mode
+                                                                    c++-mode
+                                                                    cmake-mode
+                                                                    c-mode-common)))
+  (spacemacs/add-to-hooks 'set-c++-mode-options c-c++-mode-hooks)
+  (flycheck-add-next-checker 'rtags 'irony)
+  ;; (flycheck-add-next-checker 'irony 'c/c++-clang)
   ;; slime-setting
   ;; (load (expand-file-name "~/.roswell/helper.el"))
   ;; (setq inferior-lisp-program "ros -Q run")
@@ -467,7 +488,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (org-pomodoro org-download gruvbox-theme flycheck-haskell evil-org editorconfig dante cmake-ide cargo ess smartparens evil window-purpose helm helm-core avy markdown-mode projectile magit magit-popup f rust-mode s web-mode utop tuareg caml tagedit slim-mode scss-mode sass-mode pug-mode ox-reveal ocp-indent merlin less-css-mode helm-css-scss haml-mode ess-smart-equals emmet-mode company-web web-completion-data auctex-latexmk cuda-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help slime-company slime intero flycheck hlint-refactor hindent helm-hoogle helm-company helm-c-yasnippet haskell-snippets fuzzy ddskk cdb ccc company-statistics company-ghci company-ghc ghc haskell-mode company-cabal company common-lisp-snippets cmm-mode auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (markdown-mode with-editor web-mode utop tuareg caml tagedit slim-mode scss-mode sass-mode pug-mode ox-reveal ocp-indent merlin less-css-mode helm-css-scss haml-mode ess-smart-equals emmet-mode company-web web-completion-data auctex-latexmk cuda-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help slime-company slime intero flycheck hlint-refactor hindent helm-hoogle helm-company helm-c-yasnippet haskell-snippets fuzzy ddskk cdb ccc company-statistics company-ghci company-ghc ghc haskell-mode company-cabal company common-lisp-snippets cmm-mode auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
