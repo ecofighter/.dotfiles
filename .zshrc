@@ -1,3 +1,4 @@
+fpath+=~/.zfunc
 autoload -U compinit; compinit
 autoload -U colors
 autoload -Uz zmv
@@ -30,29 +31,30 @@ SAVEHIST=10000
 zstyle ':completion:*:default' menu select=1
 alias vi="nvim"
 alias luajitlatex="luajittex --fmt=luajitlatex.fmt"
+alias stack="env LANG=C stack"
+alias ls="exa"
+alias la='exa -la --git'
+alias ll="exa -l --git"
 function emg() {
     case $1 in
-        '') emacsclient -c . > /dev/null & disown ;;
-        *) emacsclient -c $* > /dev/null & disown ;;
+        '') emacs . > /dev/null & disown ;;
+        *) emacs $* > /dev/null & disown ;;
     esac
 }
 function emc() {
     case $1 in
-        '') emacsclient . ;;
-        *) emacsclient $* ;;
+        '') emacs -nw . ;;
+        *) emacs -nw $* ;;
     esac
 }
 function ediff() {
-    emacsclient -c --eval "(ediff-files \""$1"\" \""$2"\")"
+    emacs --eval "(ediff-files \""$1"\" \""$2"\")"
 }
 alias ekill="emacsclient -e '(kill-emacs)'"
 alias em="emg"
 function play() {
     mpv $* > /dev/null 2>&1 &; disown;
 }
-alias ll="ls -l"
-alias la="ls -a"
-alias lla="ls -la"
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
@@ -160,7 +162,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "tarruda/zsh-autosuggestions", use:"zsh-autosuggestions.zsh"
-zplug "clvv/fasd", as:command, use:fasd
+# zplug "clvv/fasd", as:command, use:fasd
 zplug "jhawthorn/fzy", \
       as:command, \
       rename-to:fzy, \
@@ -230,4 +232,4 @@ bindkey -M viins '^[d' deer-redraw
 bindkey -M viins '^R' fzy-history-widget
 bindkey -M viins -s '^[r' 'ranger\n'
 
-eval "$(fasd --init auto)"
+# eval "$(fasd --init auto)"

@@ -6,6 +6,7 @@ xautolock -locker "systemctl suspend" -time 5 -detectsleep &
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor HDMI2 -d HDMI
 #bspc desktop 1 -l monocle
 bspc config border_width 2
 bspc config window_gap          12

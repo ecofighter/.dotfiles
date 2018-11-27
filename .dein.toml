@@ -50,13 +50,13 @@ hook_add = """
   call ale#Set('cpp_clang_options', '-std=c++17 -Wall')
 """
 
-[[plugins]]
-repo = 'kassio/neoterm'
-if = 'has("nvim")'
-hook_add = '''
-  set sh=bash
-  let g:neoterm_position = 'vertical'
-'''
+# [[plugins]]
+# repo = 'kassio/neoterm'
+# if = 'has("nvim")'
+# hook_add = '''
+#   set sh=bash
+#   let g:neoterm_position = 'vertical'
+# '''
 
 [[plugins]]
 repo = 'tyru/caw.vim'
