@@ -187,7 +187,7 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_role="quake"] floating enable
 for_window [class="ncmpcpp"] floating enable
 for_window [class="mpv"] floating enable
-for_window [title="Alacritty"] focus, floating enable, move scratchpad, resize set 1000 800, move absolute position center, move absolute position center
+for_window [title="Alacritty"] focus, floating enable, move scratchpad, resize set 1200 800, move absolute position center, move absolute position center
 for_window [class="Sxiv"] floating enable
 for_window [class="tilda"] floating enable
 
@@ -224,7 +224,7 @@ exec --no-startup-id feh --bg-scale /home/haneta/Pictures/wallpaper.jpg
 exec --no-startup-id compton --config /home/haneta/.dotfiles/compton.conf --dbus
 exec --no-startup-id wmctrl -c Plasma
 for_window [title="デスクトップ"] kill, floating enable, border none
-for_window [title="デスクトップ — プラズマ"] kill, floating enable, border none
+for_window [title="デスクトップ —プラズマ"] kill, floating enable, border none
 
 
 force_display_urgency_hint 0 ms
@@ -243,7 +243,7 @@ bar {
 # exec_always --no-startup-id tilda
 
 new_window 1pixel
-for_window [class="^.*"] border pixel 0
+# for_window [class="^.*"] border pixel 0
 
 gaps inner 10
 gaps outer 4

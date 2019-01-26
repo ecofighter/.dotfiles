@@ -1,5 +1,6 @@
 fpath+=~/.zfunc
-autoload -U compinit; compinit
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 autoload -U colors
 autoload -Uz zmv
 alias zmv='noglob zmv'
@@ -31,27 +32,27 @@ SAVEHIST=10000
 zstyle ':completion:*:default' menu select=1
 alias vi="nvim"
 alias luajitlatex="luajittex --fmt=luajitlatex.fmt"
-alias stack="env LANG=C stack"
 alias ls="exa"
 alias la='exa -la --git'
 alias ll="exa -l --git"
 function emg() {
     case $1 in
-        '') emacs . > /dev/null & disown ;;
-        *) emacs $* > /dev/null & disown ;;
+        '') emacsclient -c . > /dev/null & disown ;;
+        *) emacsclient -c $* > /dev/null & disown ;;
     esac
 }
 function emc() {
     case $1 in
-        '') emacs -nw . ;;
-        *) emacs -nw $* ;;
+        '') emacsclient . ;;
+        *) emacsclient -nw $* ;;
     esac
 }
 function ediff() {
     emacs --eval "(ediff-files \""$1"\" \""$2"\")"
 }
 alias ekill="emacsclient -e '(kill-emacs)'"
-alias em="emg"
+alias em="emc"
+alias nem="emacs -nw"
 function play() {
     mpv $* > /dev/null 2>&1 &; disown;
 }
@@ -233,3 +234,4 @@ bindkey -M viins '^R' fzy-history-widget
 bindkey -M viins -s '^[r' 'ranger\n'
 
 # eval "$(fasd --init auto)"
+eval "$(stack --bash-completion-script stack)"
