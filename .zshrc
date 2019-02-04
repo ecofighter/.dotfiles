@@ -35,24 +35,30 @@ alias luajitlatex="luajittex --fmt=luajitlatex.fmt"
 alias ls="exa"
 alias la='exa -la --git'
 alias ll="exa -l --git"
+ORGHOME="$HOME/org/home.org"
 function emg() {
     case $1 in
-        '') emacsclient -c . > /dev/null & disown ;;
-        *) emacsclient -c $* > /dev/null & disown ;;
+        '') {pgrep emacsclient > /dev/null} && echo "already running emacsclient" \
+                    || {nohup emacsclient -a "" -c $ORGHOME 2>&1 > /dev/null &};;
+        *) {pgrep emacsclient > /dev/null} && echo "already running emacscilent" \
+                   || {nohup emacsclient -a "" -c $* 2>&1 > /dev/null &};;
     esac
 }
 function emc() {
     case $1 in
-        '') emacsclient . ;;
-        *) emacsclient -nw $* ;;
+        '') {pgrep emacsclient > /dev/null} && echo "already running emacsclient" \
+                    || emacsclient -a "" $ORGHOME ;;
+        *) {pgrep emacsclient > /dev/null} && echo "already running emacscilent" \
+                   || emacsclient -a "" $* ;;
     esac
 }
 function ediff() {
     emacs --eval "(ediff-files \""$1"\" \""$2"\")"
 }
 alias ekill="emacsclient -e '(kill-emacs)'"
-alias em="emc"
+alias em="emg"
 alias nem="emacs -nw"
+alias nemg="emacs"
 function play() {
     mpv $* > /dev/null 2>&1 &; disown;
 }
