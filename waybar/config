@@ -5,7 +5,8 @@
     "position": "top",
 
     "modules-left": [
-        "sway/workspaces"
+        "sway/workspaces",
+        "sway/window"
     ],
     "modules-center": [
         "clock#1",
@@ -26,6 +27,9 @@
         "disable-scroll": true,
         "format": "{name}"
     },
+    "sway/window": {
+        "max-length": 30
+    },
 
     "clock#1": {
         "format": "{:%a}",
@@ -41,8 +45,8 @@
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "{icon}  {volume}%",
+        "format": "{icon}{volume}%",
+        "format-bluetooth": "{icon}{volume}%",
         "format-muted": "MUTE",
         "format-icons": {
             "headphones": "",
@@ -69,7 +73,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
+        "format-discharging": "{icon}{capacity}% {time}",
+        "format-charging": " {capacity}% {time}",
+        "format-full": " Full",
         "format-icons": [
             "",
             "",
@@ -80,8 +86,10 @@
     },
     "network": {
         "interface": "wlp2s0",
-        "format-wifi": " {essid}",
-        "format-disconnected": ""
+        "format-wifi": "{essid}",
+        "format-disconnected": "",
+        "max-length": 8,
+        "on-click": "connman-gtk"
     },
 
     "idle_inhibitor": {

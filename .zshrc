@@ -37,6 +37,7 @@ alias la='exa -la --git'
 alias ll="exa -l --git"
 alias ffmpeg="ffmpeg -hide_banner"
 alias ffprobe="ffprobe -hide_banner"
+alias zathura='GDK_BACKEND=wayland zathura'
 ORGHOME="$HOME/org/home.org"
 function mpvv() {
     nohup mpv $* < /dev/null &> /dev/null & disown

@@ -33,8 +33,12 @@ input type:keyboard {
 # Basics:
 #
     # start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return [title="scratchpad termite"] scratchpad show
     bindsym $mod+Shift+Return exec termite --title='scratchpad termite'
+
+    # dismiss notice
+    bindsym $mod+BackSpace exec makoctl dismiss
+    bindsym $mod+Shift+BackSpace exec makoctl dismiss --all
 
     # kill focused window
     bindsym $mod+Shift+q kill
@@ -186,7 +190,8 @@ bar {
 for_window [title="mpv"] floating enable
 for_window [title="scratchpad termite"] floating enable, move scratchpad, resize set 1600 800, move absolute position center
 
-xwayland enable 
+xwayland enable
+exec mako --font 'Koruri 16' --default-timeout 10000
 exec blueman-applet
 exec /usr/lib/kdeconnectd
 exec indicator-kdeconnect
