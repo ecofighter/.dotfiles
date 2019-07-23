@@ -1,0 +1,16 @@
+override MARCH=native
+OPENBLAS_TARGET_ARCH=NEHALEM
+OPENBLAS_DYNAMIC_ARCH = 0
+LIBBLAS=-lopenblas_threads
+LIBBLASNAME=libopenblas_threads
+LIBLAPACK=-lreflapack -lopenblas_threads
+LIBLAPACKNAME=libreflapack
+override USE_LLVM_SHLIB=1
+override USE_SYSTEM_LLVM=1
+override LLVM_CONFIG=/usr/bin/llvm-config
+override LLVMROOT=/usr
+override USE_SYSTEM_BLAS=1
+override USE_SYSTEM_LAPACK=1
+override USE_SYSTEM_FFTW=1
+override USE_SYSTEM_GMP=1
+override USE_SYSTEM_CURL=1

@@ -1,0 +1,97 @@
+// -*- mode:json -*-
+
+{
+    "layer": "top",
+    "position": "top",
+
+    "modules-left": [
+        "sway/workspaces"
+    ],
+    "modules-center": [
+        "clock#1",
+        "clock#2",
+        "clock#3"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "network",
+        "pulseaudio",
+        "memory",
+        "cpu",
+        "battery",
+        "tray"
+    ],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}"
+    },
+
+    "clock#1": {
+        "format": "{:%a}",
+        "tooltip": false
+    },
+    "clock#2": {
+        "format": "{:%H:%M}",
+        "tooltip": false
+    },
+    "clock#3": {
+        "format": "{:%m-%d}",
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-muted": "MUTE",
+        "format-icons": {
+            "headphones": "",
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "scroll-step": 5,
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol"
+    },
+    "memory": {
+        "interval": 5,
+        "format": "Mem {}%"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "CPU {usage:2}%"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "network": {
+        "interface": "wlp2s0",
+        "format-wifi": " {essid}",
+        "format-disconnected": ""
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        "icon-size": 20
+    }
+}

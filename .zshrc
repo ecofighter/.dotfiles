@@ -35,32 +35,30 @@ alias luajitlatex="luajittex --fmt=luajitlatex.fmt"
 alias ls="exa"
 alias la='exa -la --git'
 alias ll="exa -l --git"
+alias ffmpeg="ffmpeg -hide_banner"
+alias ffprobe="ffprobe -hide_banner"
 ORGHOME="$HOME/org/home.org"
+function mpvv() {
+    nohup mpv $* < /dev/null &> /dev/null & disown
+}
+function cmpv() {
+    nohup mpv $(xsel -ob) < /dev/null &> /dev/null & disown
+}
 function emg() {
-    case $1 in
-        '') {pgrep emacsclient > /dev/null} && echo "already running emacsclient" \
-                    || {nohup emacsclient -a "" -c $ORGHOME 2>&1 > /dev/null &};;
-        *) {pgrep emacsclient > /dev/null} && echo "already running emacscilent" \
-                   || {nohup emacsclient -a "" -c $* 2>&1 > /dev/null &};;
-    esac
+    nohup emacsclient -a "" -c $* > /dev/null > /dev/null 2>&1 & disown
 }
 function emc() {
-    case $1 in
-        '') {pgrep emacsclient > /dev/null} && echo "already running emacsclient" \
-                    || emacsclient -a "" $ORGHOME ;;
-        *) {pgrep emacsclient > /dev/null} && echo "already running emacscilent" \
-                   || emacsclient -a "" $* ;;
-    esac
+    emacsclient -a "" $*
 }
 function ediff() {
     emacs --eval "(ediff-files \""$1"\" \""$2"\")"
 }
-alias ekill="emacsclient -e '(kill-emacs)'"
+alias ekill="emacsclient -e '(client-save-kill-emacs)' || killall emacsclient"
 alias em="emg"
 alias nem="emacs -nw"
 alias nemg="emacs"
 function play() {
-    mpv $* > /dev/null 2>&1 &; disown;
+    mpv $* < /dev/null > /dev/null 2>&1 &; disown;
 }
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
@@ -237,7 +235,6 @@ bindkey -M viins '^Y'  yank
 
 bindkey -M viins '^[d' deer-redraw
 bindkey -M viins '^R' fzy-history-widget
-bindkey -M viins -s '^[r' 'ranger\n'
+bindkey -M viins -s '^[r' 'source ranger\n'
 
 # eval "$(fasd --init auto)"
-eval "$(stack --bash-completion-script stack)"

@@ -7,7 +7,7 @@
 export DefaultIMModule=ibus
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
-uim-xim &
+#uim-xim &
 export XMODIFIERS='@im=ibus'
 
 export XKB_DEFAULT_LAYOUT=jp
@@ -15,9 +15,10 @@ export XDG_RUNTIME_DIR=/run/user/1000
 export XDG_CONFIG_DIR=~/.config
 #unclutter -b
 #nm-applet &
-xmodmap ~/.Xmodmap
-feh --bg-scale $HOME/Pictures/wallpaper.jpg
-compton -b --config ~/.config/compton/compton.conf
+#xmodmap ~/.Xmodmap
+#feh --bg-scale $HOME/Pictures/wallpaper.jpg
+#compton -b --config ~/.config/compton/compton.conf
 #redshift-gtk &
-xmodmap -e 'remove mod4 = Hyper_L'; xmodmap -e 'keycode 65 = Hyper_L Hyper_L Hyper_L Hyper_L'; xmodmap -e 'add shift = Hyper_L'; xmodmap -e 'keycode 255 = space'; xcape -e 'Hyper_L=space'
+#xmodmap -e 'remove mod4 = Hyper_L'; xmodmap -e 'keycode 65 = Hyper_L Hyper_L Hyper_L Hyper_L'; xmodmap -e 'add shift = Hyper_L'; xmodmap -e 'keycode 255 = space'; xcape -e 'Hyper_L=space'
 #xmodmap -e 'keycode 255 = space'; xmodmap -e 'keycode 65 = Shift_L'; xcape -e '#65=space' 
+#jack_control stop
