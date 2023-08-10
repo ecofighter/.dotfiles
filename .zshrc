@@ -30,14 +30,14 @@ HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 zstyle ':completion:*:default' menu select=1
-alias vi="nvim"
-alias luajitlatex="luajittex --fmt=luajitlatex.fmt"
-alias ls="exa"
-alias la='exa -la --git'
-alias ll="exa -l --git"
-alias ffmpeg="ffmpeg -hide_banner"
-alias ffprobe="ffprobe -hide_banner"
-alias zathura='GDK_BACKEND=wayland zathura'
+#alias vi="nvim"
+#alias luajitlatex="luajittex --fmt=luajitlatex.fmt"
+#alias ls="exa"
+#alias la='exa -la --git'
+#alias ll="exa -l --git"
+#alias ffmpeg="ffmpeg -hide_banner"
+#alias ffprobe="ffprobe -hide_banner"
+#alias zathura='GDK_BACKEND=wayland zathura'
 ORGHOME="$HOME/org/home.org"
 function mpvv() {
     nohup mpv $* < /dev/null &> /dev/null & disown
@@ -239,3 +239,4 @@ bindkey -M viins '^R' fzy-history-widget
 bindkey -M viins -s '^[r' 'source ranger\n'
 
 # eval "$(fasd --init auto)"
+eval $(starship init zsh)
