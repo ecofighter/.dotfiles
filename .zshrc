@@ -38,7 +38,9 @@ zstyle ':completion:*:default' menu select=1
 #alias ffmpeg="ffmpeg -hide_banner"
 #alias ffprobe="ffprobe -hide_banner"
 #alias zathura='GDK_BACKEND=wayland zathura'
-ORGHOME="$HOME/org/home.org"
+export ORGHOME="$HOME/org/home.org"
+export EDITOR="emacsclient -nw"
+export PAGER=less
 function mpvv() {
     nohup mpv $* < /dev/null &> /dev/null & disown
 }
@@ -188,5 +190,19 @@ bindkey -M viins '^[d' deer-redraw
 bindkey -M viins '^R' fzy-history-widget
 bindkey -M viins -s '^[r' 'source ranger\n'
 
-# eval "$(fasd --init auto)"
-eval "$(starship init zsh)"
+if command -v starship &> /dev/null; then
+    eval "$(starship init zsh)"
+fi
+if command -v yazi &> /dev/null; then
+    function yy() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+        yazi "$@" --cwd-file="$tmp"
+        if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+            cd -- "$cwd"
+        fi
+        rm -f -- "$tmp"
+    }
+fi
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
