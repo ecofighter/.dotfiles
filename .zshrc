@@ -39,7 +39,7 @@ zstyle ':completion:*:default' menu select=1
 #alias ffprobe="ffprobe -hide_banner"
 #alias zathura='GDK_BACKEND=wayland zathura'
 export ORGHOME="$HOME/org/home.org"
-export EDITOR="emacsclient -nw"
+export EDITOR=emacsclient
 export PAGER=less
 function mpvv() {
     nohup mpv $* < /dev/null &> /dev/null & disown
