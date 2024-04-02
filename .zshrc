@@ -62,56 +62,6 @@ function play() {
     mpv $* < /dev/null > /dev/null 2>&1 &; disown;
 }
 
-# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
-setopt prompt_subst
-
-export TMOUT=30
-function TRAPALRM() {
-    zle .reset-prompt
-}
-
-export PREV_COMMAND_END_TIME
-export NEXT_COMMAND_BGN_TIME
-
-autoload -Uz vcs_info
-autoload -Uz add-zsh-hook
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
-zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
-zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
-add-zsh-hook precmd vcs_info
-
-function check_last_exit_code() {
-    local LAST_EXIT_CODE=$?
-    if [[ $LAST_EXIT_CODE -ne 0 ]]; then
-        local EXIT_CODE_PROMPT=''
-        EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
-        EXIT_CODE_PROMPT+="%{$fg_bold[red]%}$LAST_EXIT_CODE%{$reset_color%}"
-        EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
-        EXIT_CODE_PROMPT+=" "
-        echo "$EXIT_CODE_PROMPT"
-    fi
-}
-
-function command_time_pre() {
-    timer=${timer:-$SECONDS}
-}
-
-function command_time_post() {
-    if [ $timer ]; then
-        timer_show=$(($SECONDS - $timer))
-        export RPROMPT="%F{cyan}${timer_show}s %{$reset_color%}"
-        unset timer
-    fi
-}
-add-zsh-hook preexec command_time_pre
-add-zsh-hook precmd command_time_post
-
-PROMPT="
-%F{yellow}[%~]%f"'${vcs_info_msg_0_}'"%F{magenta}[%*]%f
-"'$(check_last_exit_code)'"%F{blue}$%f "
-
 #colors
 dark0_hard="#1D2021"
 dark0="#282828"
@@ -239,4 +189,4 @@ bindkey -M viins '^R' fzy-history-widget
 bindkey -M viins -s '^[r' 'source ranger\n'
 
 # eval "$(fasd --init auto)"
-eval $(starship init zsh)
+eval "$(starship init zsh)"
