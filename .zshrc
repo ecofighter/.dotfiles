@@ -18,8 +18,6 @@ setopt print_eight_bit  #日本語ファイル名等8ビットを通す
 setopt extended_glob  # 拡張グロブで補完(~とか^とか。例えばless *.txt~memo.txt ならmemo.txt 以外の *.txt にマッチ)
 setopt globdots # 明確なドットの指定なしで.から始まるファイルをマッチ
 
-bindkey "^I" menu-complete   # 展開する前に補完候補を出させる(Ctrl-iで補完するようにする)
-
 setopt correct
 unsetopt promptcr
 setopt pushd_ignore_dups
@@ -29,8 +27,9 @@ setopt hist_ignore_space
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
-zstyle ':completion:*:default' menu select=1
-#alias vi="nvim"
+zstyle ':completion:*:default' menu select interactive
+setopt menu_complete
+alias vi="nvim"
 #alias luajitlatex="luajittex --fmt=luajitlatex.fmt"
 #alias ls="exa"
 #alias la='exa -la --git'
@@ -121,17 +120,6 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "tarruda/zsh-autosuggestions", use:"zsh-autosuggestions.zsh"
 # zplug "clvv/fasd", as:command, use:fasd
-zplug "jhawthorn/fzy", \
-      as:command, \
-      rename-to:fzy, \
-      hook-build:"make"
-zplug "b4b4r07/enhancd", use:init.sh
-zplug "Vifon/deer", use:deer
-
-if zplug check b4b4r07/enhancd; then
-    export ENHANCD_FILTER=fzy:fzf
-fi
-
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -140,33 +128,6 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
-
-if zplug check Vifon/deer; then
-    autoload -U deer
-    function deer-redraw() {
-        deer
-        zle redisplay
-    }
-    zle -N deer-redraw
-fi
-
-function __fzycmd() {
-    echo "fzy"
-}
-
-# CTRL-R - Paste the selected command from history into the command line
-function fzy-history-widget() {
-    local selected num
-    selected=( $(fc -r -l 1 | $(__fzycmd) -l 20 -q "${LBUFFER//$/\\$}") )
-    if [ -n "$selected" ]; then
-        num=$selected[1]
-        if [ -n "$num" ]; then
-            zle vi-fetch-history -n $num
-        fi
-    fi
-    zle redisplay
-}
-zle -N fzy-history-widget
 
 bindkey -v
 bindkey -M viins '\er' history-incremental-pattern-search-forward
@@ -187,11 +148,13 @@ bindkey -M viins '^W'  backward-kill-word
 bindkey -M viins '^Y'  yank
 
 bindkey -M viins '^[d' deer-redraw
-bindkey -M viins '^R' fzy-history-widget
 bindkey -M viins -s '^[r' 'source ranger\n'
 
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
+fi
+if command -v fzf &> /dev/null; then
+    eval "$(fzf --zsh)"
 fi
 if command -v yazi &> /dev/null; then
     function yy() {
