@@ -38,9 +38,14 @@ alias vi="nvim"
 #alias ffprobe="ffprobe -hide_banner"
 #alias zathura='GDK_BACKEND=wayland zathura'
 export ORGHOME="$HOME/org/home.org"
-export EDITOR=emacsclient
+if command -v emacsclient &> /dev/null; then
+    export EDITOR="emacsclient"
+else
+    export EDITOR="vi"
+fi
 export PAGER=less
 function mpvv() {
+
     nohup mpv $* < /dev/null &> /dev/null & disown
 }
 function cmpv() {
@@ -55,7 +60,9 @@ function emc() {
 function ediff() {
     emacs --eval "(ediff-files \""$1"\" \""$2"\")"
 }
-alias ekill="emacsclient -e '(client-save-kill-emacs)' || killall emacsclient"
+function ekill() {
+    emacsclient -e '(client-save-kill-emacs)' || killall emacsclient
+}
 alias em="emg"
 alias nem="emacs -nw"
 alias nemg="emacs"
