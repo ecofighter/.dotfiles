@@ -23,3 +23,7 @@ path=(
     # reject world-writable directories (^W)
     ${^path}(N-/^W)
 )
+if command -v keychain &> /dev/null; then
+    keychain --nogui --quiet ~/.ssh/id_ed25519
+    source ~/.keychain/$HOST-sh
+fi
