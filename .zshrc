@@ -1,6 +1,6 @@
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
-[ ! -d "$ZINIT_HOME"/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+[ ! -d "${ZINIT_HOME}/.git" ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 
 source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-autosuggestions
@@ -54,14 +54,6 @@ else
     export EDITOR="vi"
 fi
 export PAGER=less
-function mpvv {
-    nohup mpv "$@" </dev/null &>/dev/null &
-    disown
-}
-function cmpv {
-    nohup mpv "$(xsel -ob)" </dev/null &>/dev/null &
-    disown
-}
 function emg {
     nohup emacsclient -a "" -c "$@" >/dev/null >/dev/null 2>&1 &
     disown
