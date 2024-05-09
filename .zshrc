@@ -2,6 +2,8 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
 [ ! -d "${ZINIT_HOME}/.git" ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 
+typeset -gAH ZINIT
+ZINIT[NO_ALIASES]=1
 source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
@@ -105,4 +107,5 @@ if command -v yazi &>/dev/null; then
 fi
 if command -v zoxide &>/dev/null; then
     eval "$(zoxide init zsh)"
+    alias zz=__zoxide_zi
 fi
