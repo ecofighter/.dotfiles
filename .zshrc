@@ -1,4 +1,16 @@
-fpath+=~/.zfunc
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+
+source "${ZINIT_HOME}/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zdharma-continuum/history-search-multi-word
+
+# fpath+=~/.zfunc
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 autoload -U colors
@@ -14,9 +26,9 @@ setopt auto_menu
 setopt auto_param_keys
 setopt magic_equal_subst
 
-setopt print_eight_bit  #日本語ファイル名等8ビットを通す
-setopt extended_glob  # 拡張グロブで補完(~とか^とか。例えばless *.txt~memo.txt ならmemo.txt 以外の *.txt にマッチ)
-setopt globdots # 明確なドットの指定なしで.から始まるファイルをマッチ
+setopt print_eight_bit #日本語ファイル名等8ビットを通す
+setopt extended_glob   # 拡張グロブで補完(~とか^とか。例えばless *.txt~memo.txt ならmemo.txt 以外の *.txt にマッチ)
+setopt globdots        # 明確なドットの指定なしで.から始まるファイルをマッチ
 
 setopt correct
 unsetopt promptcr
@@ -38,7 +50,7 @@ alias vi="nvim"
 #alias ffprobe="ffprobe -hide_banner"
 #alias zathura='GDK_BACKEND=wayland zathura'
 export ORGHOME="$HOME/org/home.org"
-if command -v emacsclient &> /dev/null; then
+if command -v emacsclient &>/dev/null; then
     export EDITOR="emacsclient"
 else
     export EDITOR="vi"
@@ -46,13 +58,16 @@ fi
 export PAGER=less
 function mpvv() {
 
-    nohup mpv $* < /dev/null &> /dev/null & disown
+    nohup mpv $* </dev/null &>/dev/null &
+    disown
 }
 function cmpv() {
-    nohup mpv $(xsel -ob) < /dev/null &> /dev/null & disown
+    nohup mpv $(xsel -ob) </dev/null &>/dev/null &
+    disown
 }
 function emg() {
-    nohup emacsclient -a "" -c $* > /dev/null > /dev/null 2>&1 & disown
+    nohup emacsclient -a "" -c $* >/dev/null >/dev/null 2>&1 &
+    disown
 }
 function emc() {
     emacsclient -a "" $*
@@ -66,9 +81,6 @@ function ekill() {
 alias em="emg"
 alias nem="emacs -nw"
 alias nemg="emacs"
-function play() {
-    mpv $* < /dev/null > /dev/null 2>&1 &; disown;
-}
 
 #colors
 dark0_hard="#1D2021"
@@ -114,56 +126,28 @@ faded_purple="#8F3F71"
 faded_aqua="#427B58"
 faded_orange="#AF3A03"
 
-# Plugin Configuration
-if [[ ! -d ~/.zplug ]];then
-    git clone https://github.com/zplug/zplug ~/.zplug
-fi
-
-source ~/.zplug/init.zsh
-
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:3
-zplug "tarruda/zsh-autosuggestions", use:"zsh-autosuggestions.zsh"
-# zplug "clvv/fasd", as:command, use:fasd
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load
-
 bindkey -v
-bindkey -M viins '\er' history-incremental-pattern-search-forward
-bindkey -M viins '^?'  backward-delete-char
-bindkey -M viins '^A'  beginning-of-line
-bindkey -M viins '^B'  backward-char
-bindkey -M viins '^D'  delete-char-or-list
-bindkey -M viins '^E'  end-of-line
-bindkey -M viins '^F'  forward-char
-bindkey -M viins '^G'  send-break
-bindkey -M viins '^H'  backward-delete-char
-bindkey -M viins '^K'  kill-line
-bindkey -M viins '^N'  down-line-or-history
-bindkey -M viins '^P'  up-line-or-history
+# bindkey -M viins '\er' history-incremental-pattern-search-forward
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^A' beginning-of-line
+bindkey -M viins '^B' backward-char
+bindkey -M viins '^D' delete-char-or-list
+bindkey -M viins '^E' end-of-line
+bindkey -M viins '^F' forward-char
+bindkey -M viins '^G' send-break
+bindkey -M viins '^H' backward-delete-char
+bindkey -M viins '^K' kill-line
+bindkey -M viins '^N' down-line-or-history
+bindkey -M viins '^P' up-line-or-history
 # bindkey -M viins '^R'  history-incremental-pattern-search-backward
-bindkey -M viins '^U'  backward-kill-line
-bindkey -M viins '^W'  backward-kill-word
-bindkey -M viins '^Y'  yank
+bindkey -M viins '^U' backward-kill-line
+bindkey -M viins '^W' backward-kill-word
+bindkey -M viins '^Y' yank
 
-bindkey -M viins '^[d' deer-redraw
-bindkey -M viins -s '^[r' 'source ranger\n'
-
-if command -v starship &> /dev/null; then
+if command -v starship &>/dev/null; then
     eval "$(starship init zsh)"
 fi
-if command -v fzf &> /dev/null; then
-    eval "$(fzf --zsh)"
-fi
-if command -v yazi &> /dev/null; then
+if command -v yazi &>/dev/null; then
     function yy() {
         local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
         yazi "$@" --cwd-file="$tmp"
@@ -173,6 +157,6 @@ if command -v yazi &> /dev/null; then
         rm -f -- "$tmp"
     }
 fi
-if command -v zoxide &> /dev/null; then
+if command -v zoxide &>/dev/null; then
     eval "$(zoxide init zsh)"
 fi
