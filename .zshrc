@@ -1,10 +1,8 @@
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+[ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
+[ ! -d "$ZINIT_HOME"/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 
 source "${ZINIT_HOME}/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zdharma-continuum/fast-syntax-highlighting
@@ -38,7 +36,7 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
-SAVEHIST=10000
+export SAVEHIST=10000
 zstyle ':completion:*:default' menu select interactive
 setopt menu_complete
 alias vi="nvim"
@@ -56,75 +54,30 @@ else
     export EDITOR="vi"
 fi
 export PAGER=less
-function mpvv() {
-
-    nohup mpv $* </dev/null &>/dev/null &
+function mpvv {
+    nohup mpv "$@" </dev/null &>/dev/null &
     disown
 }
-function cmpv() {
-    nohup mpv $(xsel -ob) </dev/null &>/dev/null &
+function cmpv {
+    nohup mpv "$(xsel -ob)" </dev/null &>/dev/null &
     disown
 }
-function emg() {
-    nohup emacsclient -a "" -c $* >/dev/null >/dev/null 2>&1 &
+function emg {
+    nohup emacsclient -a "" -c "$@" >/dev/null >/dev/null 2>&1 &
     disown
 }
-function emc() {
-    emacsclient -a "" $*
+function emc {
+    emacsclient -a "" "$@"
 }
-function ediff() {
-    emacs --eval "(ediff-files \""$1"\" \""$2"\")"
+function ediff {
+    emacs --eval "(ediff-files \"$1\" \"$2\")"
 }
-function ekill() {
+function ekill {
     emacsclient -e '(client-save-kill-emacs)' || killall emacsclient
 }
 alias em="emg"
 alias nem="emacs -nw"
 alias nemg="emacs"
-
-#colors
-dark0_hard="#1D2021"
-dark0="#282828"
-dark0_soft="#32302F"
-dark1="#3c3836"
-dark2="#504945"
-dark3="#665c54"
-dark4="#7C6F64"
-
-gray_245="#928374"
-gray_244="#928374"
-
-light0_hard="#FB4934"
-light0="#FBF1C7"
-light0_soft="#F2E5BC"
-light1="#EBDBB2"
-light2="#D5C4A1"
-light3="#BDAE93"
-light4="#A89984"
-
-bright_red="#FB4934"
-bright_green="#B8BB26"
-bright_yellow="#FABD2F"
-bright_blue="#83A598"
-bright_purple="#D3869B"
-bright_aqua="#8EC07C"
-bright_orange="#FE8019"
-
-neutral_red="#CC241D"
-neutral_green="#98971A"
-neutral_yellow="#D79921"
-neutral_blue="#458588"
-neutral_purple="#B16286"
-neutral_aqua="#689D6A"
-neutral_orange="#D65D0E"
-
-faded_red="#9D0006"
-faded_green="#79740E"
-faded_yellow="#B57614"
-faded_blue="#076678"
-faded_purple="#8F3F71"
-faded_aqua="#427B58"
-faded_orange="#AF3A03"
 
 bindkey -v
 # bindkey -M viins '\er' history-incremental-pattern-search-forward
@@ -148,11 +101,12 @@ if command -v starship &>/dev/null; then
     eval "$(starship init zsh)"
 fi
 if command -v yazi &>/dev/null; then
-    function yy() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+    function yy {
+        local tmp
+        tmp="$(mktemp -t "yazi-cwd.XXXXX")"
         yazi "$@" --cwd-file="$tmp"
         if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-            cd -- "$cwd"
+            cd -- "$cwd" || return
         fi
         rm -f -- "$tmp"
     }
