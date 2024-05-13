@@ -14,16 +14,17 @@ if [[ -v WAYLAND_DISPLAY ]]; then
 fi
 # export LD_LIBRARY_PATH="/opt/cuda/lib64"
 
-# OPAM configuration
 . /home/haneta/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. /home/haneta/.ghcup/env > /dev/null 2> /dev/null || true
+. "$HOME/.cargo/env" > /dev/null 2> /dev/null || true
 
-. /home/haneta/.ghcup/env
 path=(
     # allow directories only (-/)
     # reject world-writable directories (^W)
     ${^path}(N-/^W)
 )
-if command -v keychain &> /dev/null; then
-    keychain --nogui --quiet ~/.ssh/id_ed25519
-    source ~/.keychain/$HOST-sh
+
+if command -v gpgconf &> /dev/null; then
+    export SSH_AUTH_SOCK=$(gpgconf --list-dir agent-ssh-socket)
+    dbus-update-activation-environment --systemd SSH_AUTH_SOCK
 fi
