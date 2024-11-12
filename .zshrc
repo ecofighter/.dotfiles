@@ -50,18 +50,14 @@ alias vi="nvim"
 #alias ffprobe="ffprobe -hide_banner"
 #alias zathura='GDK_BACKEND=wayland zathura'
 export ORGHOME="$HOME/org/home.org"
-if command -v emacsclient &>/dev/null; then
-    export EDITOR="emacsclient"
-else
-    export EDITOR="vi"
-fi
+export EDITOR="vi"
 export PAGER=less
 function emg {
-    nohup emacsclient -a "" -c "$@" >/dev/null >/dev/null 2>&1 &
+    nohup emacs "$@" >/dev/null >/dev/null 2>&1 &
     disown
 }
 function emc {
-    emacsclient -a "" "$@"
+    emacs -nw "$@"
 }
 function ediff {
     emacs --eval "(ediff-files \"$1\" \"$2\")"
@@ -109,3 +105,7 @@ if command -v zoxide &>/dev/null; then
     eval "$(zoxide init zsh)"
     alias zz=__zoxide_zi
 fi
+if command -v batcat &>/dev/null; then
+    alias bat=batcat
+fi
+
