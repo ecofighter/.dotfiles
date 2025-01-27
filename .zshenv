@@ -5,8 +5,8 @@ export PATH="$HOME/.roswell/bin:$PATH"
 export PATH="$HOME/.zplug/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 export PATH="$HOME/.elan/bin:$PATH"
-export PATH="$HOME/.deno/bin:$PATH"
 export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
+export PATH="/opt/emacs/bin:$PATH"
 export EDITOR=/bin/vim
 export PAGER=/bin/less
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
@@ -44,5 +44,5 @@ fi
 
 if command -v gpgconf &> /dev/null; then
     export SSH_AUTH_SOCK=$(gpgconf --list-dir agent-ssh-socket)
-    dbus-update-activation-environment --systemd SSH_AUTH_SOCK
+    # dbus-update-activation-environment --systemd SSH_AUTH_SOCK
 fi

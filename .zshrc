@@ -1,15 +1,6 @@
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
-[ ! -d "${ZINIT_HOME}/.git" ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-
-typeset -gAH ZINIT
-ZINIT[NO_ALIASES]=1
-source "${ZINIT_HOME}/zinit.zsh"
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light zdharma-continuum/history-search-multi-word
-
+if command -v sheldon &>/dev/null; then
+    eval "$(sheldon source)"
+fi
 # fpath+=~/.zfunc
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
@@ -42,13 +33,6 @@ export SAVEHIST=10000
 zstyle ':completion:*:default' menu select interactive
 setopt menu_complete
 alias vi="nvim"
-#alias luajitlatex="luajittex --fmt=luajitlatex.fmt"
-#alias ls="exa"
-#alias la='exa -la --git'
-#alias ll="exa -l --git"
-#alias ffmpeg="ffmpeg -hide_banner"
-#alias ffprobe="ffprobe -hide_banner"
-#alias zathura='GDK_BACKEND=wayland zathura'
 export ORGHOME="$HOME/org/home.org"
 export EDITOR="vi"
 export PAGER=less
@@ -109,3 +93,12 @@ if command -v batcat &>/dev/null; then
     alias bat=batcat
 fi
 
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/haneta/.opam/opam-init/init.zsh' ]] || source '/home/haneta/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
