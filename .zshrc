@@ -32,10 +32,14 @@ HISTSIZE=10000
 export SAVEHIST=10000
 zstyle ':completion:*:default' menu select interactive
 setopt menu_complete
-alias vi="nvim"
-export ORGHOME="$HOME/org/home.org"
-export EDITOR="vi"
+if command -v vim >/dev/null; then
+    export EDITOR="vim"
+else
+    export EDITOR="vim"
+fi
 export PAGER=less
+
+export ORGHOME="$HOME/org/home.org"
 function emg {
     nohup emacs "$@" >/dev/null >/dev/null 2>&1 &
     disown
@@ -89,16 +93,10 @@ if command -v zoxide &>/dev/null; then
     eval "$(zoxide init zsh)"
     alias zz=__zoxide_zi
 fi
+if command -v eza &>/dev/null; then
+    alias ls="eza"
+    alias tree="eza -T"
+fi
 if command -v batcat &>/dev/null; then
     alias bat=batcat
 fi
-
-
-
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
-[[ ! -r '/home/haneta/.opam/opam-init/init.zsh' ]] || source '/home/haneta/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
-# END opam configuration
