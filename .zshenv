@@ -4,10 +4,19 @@ elif [[ "$(uname)" == "Linux" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-# typeset -U path PATH
+typeset -U PATH path
+typeset -U INFOPATH infopath
+typeset -T INFOPATH infopath
+typeset -U MANPATH manpath
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
-export PATH="/opt/emacs/bin:$PATH"
+# if [[ "$(uname)" == "Darwin" ]]; then
+#     export PATH="/Applications/Emacs.app/Contents/MacOS/bin:$PATH"
+#     export INFOPATH="/Applications/Emacs.app/Contents/Resources/info:$INFOPATH"
+#     export MANPATH="/Applications/Emacs.app/Contents/Resources/man:$MANPATH"
+# elif [[ "$(uname)" == "Linux" ]]; then
+#     export PATH="/opt/emacs/bin:$PATH"
+# fi
 export EDITOR=/bin/vim
 export PAGER=/bin/less
 if command -v rustc >/dev/null; then
@@ -41,7 +50,12 @@ path=(
 #     fi
 # fi
 
-if command -v gpgconf &> /dev/null; then
-    export SSH_AUTH_SOCK=$(gpgconf --list-dir agent-ssh-socket)
-    # dbus-update-activation-environment --systemd SSH_AUTH_SOCK
+if [[ "$(uname)" == "Linux" ]]; then
+    if command -v gpgconf &> /dev/null; then
+        export SSH_AUTH_SOCK=$(gpgconf --list-dir agent-ssh-socket)
+        # dbus-update-activation-environment --systemd SSH_AUTH_SOCK
+    fi
 fi
+
+
+
