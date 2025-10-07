@@ -10,13 +10,6 @@ typeset -T INFOPATH infopath
 typeset -U MANPATH manpath
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
-# if [[ "$(uname)" == "Darwin" ]]; then
-#     export PATH="/Applications/Emacs.app/Contents/MacOS/bin:$PATH"
-#     export INFOPATH="/Applications/Emacs.app/Contents/Resources/info:$INFOPATH"
-#     export MANPATH="/Applications/Emacs.app/Contents/Resources/man:$MANPATH"
-# elif [[ "$(uname)" == "Linux" ]]; then
-#     export PATH="/opt/emacs/bin:$PATH"
-# fi
 export EDITOR=/bin/vim
 export PAGER=/bin/less
 if command -v rustc >/dev/null; then
@@ -26,9 +19,18 @@ if [[ -v WAYLAND_DISPLAY ]]; then
     export GDK_BACKEND=wayland
 fi
 
-[[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh"  > /dev/null 2> /dev/null
-. "$HOME/.ghcup/env" > /dev/null 2> /dev/null || true
-. "$HOME/.cargo/env" > /dev/null 2> /dev/null || true
+if command -v opam &>/dev/null; then
+    eval $(opam env)
+fi
+[[ ! -r "$HOME/.ghcup/env" ]] || source "$HOME/.ghcup/env" > /dev/null 2> /dev/null
+[[ ! -r "$HOME/.cargo/env" ]] || source "$HOME/.cargo/env" > /dev/null 2> /dev/null
+[[ ! -r "$HOME/.elan/env" ]] || source "$HOME/.elan/env" > /dev/null 2> /dev/null
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d "$PYENV_ROOT/bin" ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv >/dev/null; then
+    eval "$(pyenv init - zsh)"
+fi
 
 path=(
     # allow directories only (-/)

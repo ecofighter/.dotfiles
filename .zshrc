@@ -100,3 +100,6 @@ fi
 if command -v batcat &>/dev/null; then
     alias bat=batcat
 fi
+if [[ -x "$HOME/.claude/local/claude" ]]; then
+    alias claude="~/.claude/local/claude"
+fi
