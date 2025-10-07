@@ -1,6 +1,6 @@
 if [[ "$(uname)" == "Darwin" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [[ "$(uname)" == "Linux" ]]; then
+elif [[ "$(uname)" == "Linux" && -d "/home/linuxbrew" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 

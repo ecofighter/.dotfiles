@@ -34,8 +34,8 @@ zstyle ':completion:*:default' menu select interactive
 setopt menu_complete
 if command -v vim >/dev/null; then
     export EDITOR="vim"
-else
-    export EDITOR="vim"
+elif command -v nvim > /dev/null; then
+    export EDITOR="nvim"
 fi
 export PAGER=less
 
