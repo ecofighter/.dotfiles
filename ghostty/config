@@ -19,7 +19,9 @@
 # ==========================
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
-# font-family = Iosevka
+font-family = 0xProto
+font-family = Noto Sans CJK JP
+font-feature = -dlig
 # window-padding-x = 2
 #
 # # Spacing around the equals sign does not matter.
@@ -41,5 +43,8 @@
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
-font-family = 'UDEV Gothic'
-font-feature = -calt, -liga, -dlig
+window-decoration = client
+theme = Monokai Pro
+background-opacity = 0.9
+background-blur = false
+keybind = shift+enter=text:\x1b\r
